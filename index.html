@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kaizen Leap — Ingeniería Visual Global · VFX · Cine Comercial · 2026</title>
+    
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/fancybox.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <style>
+        :root {
+            --g1: #D4A843; --g2: #F0C96A; --g3: #A87228;
+            --fire: #C93A0C; --fire2: #E8520A;
+            --ink: #060300; --ink2: #0F0800; --card: #110A03;
+            --cream: #F2E8D0; --muted: #9A8060; --white: #FFF8EE;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,700;0,900;1,400;1,700&family=Outfit:wght=200;300;400;500;600;700;800&display=swap');
+
+        /* CONFIGURACIÓN GLOBAL CINEMATOGRÁFICA */
+        html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; background-color: var(--ink); color: var(--cream); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+
+        /* Grain cinematográfico global — capa muy sutil sobre toda la página */
+        body::after {
+            content: '';
+            position: fixed; inset: 0; z-index: 99998;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.04'/%3E%3C/svg%3E");
+            background-size: 220px 220px;
+            opacity: 0.45;
+            mix-blend-mode: overlay;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-head); color: var(--white); }
+        p { font-size: 16px; font-weight: 300; line-height: 1.95; color: rgba(242,232,208,.8); }
+        
+        .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; }
+        .sec { padding: 140px 0; position: relative; z-index: 2; overflow: hidden; }
+        
+        /* Líneas de Separación de Arte */
+        .div-line { border: none; max-width: 1200px; margin: 0 auto; height: 1px; background: linear-gradient(to right, transparent, rgba(212,168,67,.15), transparent); }
+
+        /* INTERFACES DE CONVERSIÓN PREMIUM */
+        .btn-gold { background: linear-gradient(135deg, var(--g1), var(--g3)); color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 18px 46px; border: none; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); transition: all .35s cubic-bezier(.16,1,.3,1); text-decoration: none; display: inline-block; box-shadow: 0 8px 30px rgba(212,168,67,.2); }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 18px 55px rgba(212,168,67,.4); color: var(--ink); }
+        .btn-ghost { background: transparent; color: var(--g2); font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; padding: 17px 46px; border: 1px solid rgba(212,168,67,.25); transition: all .35s cubic-bezier(.16,1,.3,1); text-decoration: none; display: inline-block; }
+        .btn-ghost:hover { border-color: var(--g1); background: rgba(212,168,67,.05); transform: translateY(-3px); color: var(--g2); }
+
+        /* NAVEGACIÓN CORPORATIVA */
+        header { position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; padding: 20px 24px; background: linear-gradient(to bottom, rgba(6,3,0,0.92), rgba(6,3,0,0.0)); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(212,168,67,0.06); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1300px; margin: 0 auto; width: 100%; }
+        
+        .brand-container { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .brand-logo-img { height: 44px; width: auto; object-fit: contain; filter: drop-shadow(0 0 8px rgba(212,168,67,0.25)); }
+        .logo-txt { font-family: var(--font-head); font-size: 24px; font-weight: 900; color: var(--white); font-style: italic; letter-spacing: -0.5px; margin: 0; }
+        .logo-txt em { color: var(--g2); font-style: normal; }
+        
+        .main-nav ul { display: flex; list-style: none; gap: 40px; margin: 0; padding: 0; align-items: center; }
+        .main-nav a { font-size: 10px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .3s; }
+        .main-nav a:hover { color: var(--g2); }
+        
+        .main-nav .nav-proposal-highlight a { color: var(--g2); border-bottom: 1px solid rgba(240,201,106,0.3); padding-bottom: 2px; }
+        .main-nav .nav-proposal-highlight a:hover { color: var(--white); border-color: var(--white); }
+        
+        /* ══════════════════════════════════════════════
+           PORTADA CINEMATOGRÁFICA — HERO PREMIUM V3
+        ══════════════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            position: relative; overflow: hidden;
+            padding: 160px 24px 120px;
+            background-color: var(--ink);
+        }
+
+        /* — CAPA 0: Grid arquitectónico de fondo — */
+        .hero-grid-bg {
+            position: absolute; inset: 0; z-index: 0; pointer-events: none;
+            background-image:
+                linear-gradient(rgba(212,168,67,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212,168,67,0.035) 1px, transparent 1px);
+            background-size: 80px 80px;
+            -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+        }
+
+        /* — CAPA 1: Canvas de partículas — */
+        #hero-particles { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+
+        /* — CAPA 2: Bokeh multi-punto — */
+        .hero-bokeh { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+        .hero-bokeh::before {
+            content: '';
+            position: absolute;
+            width: 900px; height: 900px;
+            background: radial-gradient(circle, rgba(212,168,67,0.12) 0%, transparent 65%);
+            top: -200px; left: 50%; transform: translateX(-50%);
+            border-radius: 50%;
+            animation: bokehPulse 7s ease-in-out infinite alternate;
+        }
+        .hero-bokeh::after {
+            content: '';
+            position: absolute;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(201,58,12,0.09) 0%, transparent 65%);
+            bottom: 60px; right: 8%;
+            border-radius: 50%;
+            animation: bokehPulse2 10s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes bokehPulse  { from { opacity:.6; transform: translateX(-50%) scale(1);    } to { opacity:1;  transform: translateX(-50%) scale(1.2);  } }
+        @keyframes bokehPulse2 { from { opacity:.5; transform: scale(1);    } to { opacity:.9; transform: scale(1.25); } }
+
+        /* Tercer bokeh lateral izquierdo azul frío */
+        .hero-bokeh-extra {
+            position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden;
+        }
+        .hero-bokeh-extra::before {
+            content: '';
+            position: absolute;
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(80,120,200,0.06) 0%, transparent 70%);
+            top: 30%; left: -80px;
+            border-radius: 50%;
+            animation: bokehPulse2 13s ease-in-out infinite alternate;
+        }
+
+        /* — CAPA 3: Vídeo de fondo — */
+        .hero-video-bg { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden; }
+        .hero-video-bg video {
+            position: absolute; top: 50%; left: 50%;
+            width: 100%; height: 100%; object-fit: cover;
+            transform: translate(-50%, -50%);
+            opacity: 0.22;
+            filter: contrast(125%) brightness(55%) grayscale(12%) saturate(70%);
+            backface-visibility: hidden; will-change: transform;
+        }
+
+        /* — CAPA 4: Scanlines — */
+        .hero-scanlines {
+            position: absolute; inset: 0; z-index: 4; pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent, transparent 3px,
+                rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 4px
+            );
+            animation: scanMove 12s linear infinite;
+        }
+        @keyframes scanMove { from { background-position: 0 0; } to { background-position: 0 120px; } }
+
+        /* — CAPA 5: Viñeta / gradiente overlay — */
+        .hero-overlay {
+            position: absolute; inset: 0; z-index: 5;
+            background:
+                radial-gradient(ellipse 100% 60% at 50% 0%, rgba(6,3,0,0.0) 0%, rgba(6,3,0,0.55) 100%),
+                linear-gradient(to bottom,
+                    rgba(6,3,0,0.6) 0%,
+                    rgba(6,3,0,0.05) 40%,
+                    rgba(6,3,0,0.05) 60%,
+                    rgba(6,3,0,0.92) 95%,
+                    var(--ink) 100%
+                ),
+                linear-gradient(to right, rgba(6,3,0,0.45) 0%, transparent 20%, transparent 80%, rgba(6,3,0,0.45) 100%);
+        }
+
+        /* — CAPA 6: Barra lateral dorada izquierda — */
+        .hero-sideline {
+            position: absolute; left: 40px; top: 50%; transform: translateY(-50%);
+            z-index: 10; pointer-events: none;
+            display: flex; flex-direction: column; align-items: center; gap: 14px;
+        }
+        .hero-sideline .sl-bar { width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, rgba(212,168,67,0.5), transparent); }
+        .hero-sideline .sl-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--g1); box-shadow: 0 0 8px rgba(212,168,67,0.6); animation: dotPulse 2s ease-in-out infinite alternate; }
+        .hero-sideline .sl-year { font-size: 9px; font-weight: 700; letter-spacing: 4px; color: rgba(212,168,67,0.4); writing-mode: vertical-rl; text-transform: uppercase; }
+        @keyframes dotPulse { from { box-shadow: 0 0 5px rgba(212,168,67,0.4); } to { box-shadow: 0 0 14px rgba(212,168,67,0.9); } }
+
+        /* — CAPA 6B: Barra lateral derecha — */
+        .hero-sideline-r {
+            position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
+            z-index: 10; pointer-events: none;
+            display: flex; flex-direction: column; align-items: center; gap: 14px;
+        }
+        .hero-sideline-r .sl-bar { width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, rgba(212,168,67,0.3), transparent); }
+        .hero-sideline-r .sl-label { font-size: 8px; font-weight: 700; letter-spacing: 3px; color: rgba(212,168,67,0.3); writing-mode: vertical-rl; text-transform: uppercase; }
+
+        /* — CONTENIDO CENTRAL — */
+        .hero .wrap { position: relative; z-index: 12; }
+
+        /* Logo pulsante */
+        .hero-identity-shield { display: flex; justify-content: center; margin-bottom: 28px; }
+        .hero-center-logo {
+            height: 95px; width: auto; object-fit: contain;
+            filter: drop-shadow(0 0 30px rgba(212,168,67,0.55)) drop-shadow(0 0 80px rgba(212,168,67,0.2));
+            animation: logoPulse 4s ease-in-out infinite alternate;
+        }
+        @keyframes logoPulse {
+            from { filter: drop-shadow(0 0 18px rgba(212,168,67,0.3)) drop-shadow(0 0 50px rgba(212,168,67,0.1)); }
+            to   { filter: drop-shadow(0 0 45px rgba(212,168,67,0.7)) drop-shadow(0 0 110px rgba(212,168,67,0.25)); }
+        }
+
+        /* Eyebrow con líneas */
+        .eyebrow {
+            font-size: 10px; font-weight: 700; letter-spacing: 6px;
+            text-transform: uppercase; color: var(--g1);
+            margin-bottom: 24px;
+            display: flex; align-items: center; justify-content: center; gap: 16px;
+        }
+        .eyebrow::before, .eyebrow::after { content: ''; width: 50px; height: 1px; background: linear-gradient(to right, transparent, var(--g1)); }
+        .eyebrow::after { background: linear-gradient(to left, transparent, var(--g1)); }
+
+        /* Título con shimmer en cursiva */
+        .hero-h1 {
+            font-size: clamp(44px, 9.5vw, 110px);
+            font-weight: 900; line-height: .93;
+            color: var(--white); letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        .hero-h1 em {
+            font-style: italic;
+            background: linear-gradient(135deg, var(--g2) 0%, var(--fire2) 50%, var(--g1) 80%, var(--g2) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-size: 300% auto;
+            animation: shimmerText 5s linear infinite;
+        }
+        @keyframes shimmerText { 0% { background-position: 0% center; } 100% { background-position: 300% center; } }
+
+        /* Corner ornaments alrededor del h1 */
+        .hero-h1-wrap { position: relative; display: inline-block; }
+        .hero-h1-wrap::before, .hero-h1-wrap::after {
+            content: '✦';
+            font-size: 12px; color: rgba(212,168,67,0.35);
+            position: absolute; top: 0;
+            animation: starSpin 8s linear infinite;
+        }
+        .hero-h1-wrap::before { left: -28px; }
+        .hero-h1-wrap::after  { right: -28px; animation-direction: reverse; }
+        @keyframes starSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Divider ornamental */
+        .hero-divider {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            margin: 20px auto 28px;
+        }
+        .hero-divider::before, .hero-divider::after { content: ''; width: 55px; height: 1px; background: linear-gradient(to right, transparent, rgba(212,168,67,0.5)); }
+        .hero-divider::after { background: linear-gradient(to left, transparent, rgba(212,168,67,0.5)); }
+        .hero-divider-gem { width: 6px; height: 6px; background: var(--g1); transform: rotate(45deg); box-shadow: 0 0 10px rgba(212,168,67,0.6); }
+
+        /* Párrafo */
+        .hero-p { font-size: 17px; max-width: 660px; line-height: 1.9; color: rgba(242,232,208,.82); margin-bottom: 40px; margin-left: auto; margin-right: auto; }
+        .hero-p strong { color: var(--g2); font-weight: 500; }
+
+        /* Ticker de métricas animadas */
+        .hero-counters {
+            display: flex; justify-content: center; gap: 0;
+            max-width: 600px; margin: 0 auto 40px;
+            border: 1px solid rgba(212,168,67,0.12);
+            background: rgba(6,3,0,0.5);
+            backdrop-filter: blur(10px);
+        }
+        .hero-counter {
+            flex: 1; padding: 18px 10px; text-align: center;
+            border-right: 1px solid rgba(212,168,67,0.08);
+        }
+        .hero-counter:last-child { border-right: none; }
+        .hc-n {
+            font-family: var(--font-head); font-size: 32px; font-weight: 700;
+            background: linear-gradient(135deg, var(--g2), var(--white));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            line-height: 1; display: block;
+        }
+        .hc-l { font-size: 8px; font-weight: 700; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; margin-top: 6px; display: block; }
+
+        /* Badge de credibilidad pequeño */
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,168,67,0.07); border: 1px solid rgba(212,168,67,0.18); padding: 8px 20px; font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 36px; }
+        .hero-badge span { color: var(--g2); }
+
+        /* Scroll indicator */
+        .hero-scroll {
+            position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+            z-index: 12; display: flex; flex-direction: column; align-items: center; gap: 8px;
+            pointer-events: none;
+        }
+        .hero-scroll span { font-size: 8px; font-weight: 700; letter-spacing: 3px; color: rgba(212,168,67,0.4); text-transform: uppercase; }
+        .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(212,168,67,0.5), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+        @keyframes scrollPulse { 0%,100% { opacity: 0.3; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.1); } }
+
+        .mute-btn {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            z-index: 100;
+            background: rgba(17, 10, 3, 0.6);
+            border: 1px solid rgba(212, 168, 67, 0.25);
+            color: var(--g2);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.35s cubic-bezier(.16,1,.3,1);
+        }
+        .mute-btn:hover { border-color: var(--g1); color: var(--white); transform: scale(1.08); }
+
+        /* Canvas de partículas flotantes */
+        #hero-particles { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+
+        /* MATRIZ DE CONFIANZA INSTITUCIONAL */
+        .stats { position: relative; z-index: 10; border-top: 1px solid rgba(212,168,67,.08); border-bottom: 1px solid rgba(212, 168, 67,.08); background: rgba(17,10,3,0.75); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 0 auto; width: 100%; }
+        .stat { padding: 48px 24px; text-align: center; border-right: 1px solid rgba(212,168,67,.06); }
+        .stat:last-child { border-right: none; }
+        .stat-n { font-family: var(--font-head); font-size: 54px; font-weight: 700; background: linear-gradient(135deg, var(--g2), var(--white)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; display: block; }
+        .stat-l { font-size: 10px; font-weight: 600; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-top: 10px; display: block; }
+
+        /* SHOWROOM DE ENTORNOS Y EFECTOS */
+        .sec-eye { font-size: 10px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--g1); display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+        .sec-eye::before { content: ''; width: 28px; height: 1px; background: var(--g1); }
+        .sec-h { font-size: clamp(34px, 5.5vw, 64px); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 50px; }
+        .sec-h em { font-style: italic; color: var(--g2); }
+
+        /* SHOWREEL PRINCIPAL */
+        .showreel-wrap { margin-bottom: 80px; }
+        .showreel-label { font-size: 9px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--g1); margin-bottom: 18px; text-align: center; }
+        
+        /* FILTROS */
+        .port-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
+        .port-filter { background: transparent; border: 1px solid rgba(212,168,67,.12); color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 10px 20px; cursor: pointer; transition: all .3s; }
+        .port-filter:hover, .port-filter.active { background: rgba(212,168,67,.08); border-color: var(--g1); color: var(--g2); }
+
+        /* GRID PORTAFOLIO MULTIMEDIA AVANZADO */
+        .port-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; }
+        .port-card { background: var(--card); border-top: 1px solid rgba(212,168,67,.07); overflow: hidden; transition: all .4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: column; position: relative; }
+        .port-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212,168,67,0), transparent);
+            transition: background .5s ease;
+            z-index: 1;
+        }
+        .port-card:hover::before {
+            background: linear-gradient(to right, transparent, rgba(212,168,67,0.45), transparent);
+        }
+        .port-card:hover { border-top-color: var(--g1); transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 0 0px rgba(212,168,67,0); }
+        .port-card--wide { grid-column: span 2; }
+        
+        /* ARQUITECTURA MOTOR CLICK-TO-PLAY (NETFLIX & YOUTUBE ENGINE) */
+        .port-media, .showreel-frame { 
+            position: relative; 
+            width: 100%; 
+            padding-top: 56.25%; /* Ratio Estándar 16:9 */
+            background: #030100; 
+            overflow: hidden; 
+            cursor: pointer;
+        }
+        .port-media--reel { 
+            padding-top: 177.78%; /* Ratio Vertical Reel 9:16 */
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 0.5s cubic-bezier(.16,1,.3,1), filter 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-placeholder::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(6,3,0,0.1) 0%, rgba(6,3,0,0.5) 100%);
+            z-index: 1;
+        }
+        
+        .port-card:hover .video-placeholder, .showreel-frame:hover .video-placeholder {
+            transform: scale(1.03);
+            filter: brightness(1.08) contrast(105%);
+        }
+        
+        /* Botón Flotante de Reproducción Premium */
+        .play-btn-overlay {
+            position: relative;
+            width: 68px;
+            height: 68px;
+            background: rgba(17, 10, 3, 0.85);
+            border: 2px solid var(--g1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 26px;
+            z-index: 2;
+            transition: all 0.35s cubic-bezier(.16,1,.3,1);
+            box-shadow: 0 0 25px rgba(212,168,67,0.25);
+            padding-left: 4px; /* Centrado óptico del icono de play */
+        }
+        .port-media:hover .play-btn-overlay, .showreel-frame:hover .play-btn-overlay {
+            background: linear-gradient(135deg, var(--g1), var(--g3));
+            color: var(--ink);
+            transform: scale(1.12);
+            box-shadow: 0 0 35px rgba(212,168,67,0.6);
+            border-color: transparent;
+        }
+        
+        /* Modificación de Botón para Formato Vertical Reel */
+        .port-media--reel .play-btn-overlay {
+            width: 56px;
+            height: 56px;
+            font-size: 20px;
+            padding-left: 3px;
+        }
+
+        .port-media iframe, .showreel-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; z-index: 3; }
+        
+        .port-info { padding: 32px 36px 36px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+        .port-tag { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--g1); }
+        .port-info h4 { font-family: var(--font-head); font-size: 22px; color: var(--white); margin: 0; font-weight: 700; }
+        .port-info p { font-size: 13.5px; color: var(--muted); line-height: 1.85; margin: 0; }
+
+        /* GALERÍA FOTOS COMPLEMENTARIA SÚPER PIZZA */
+        .port-gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .port-gallery-grid img { width: 100%; height: 260px; object-fit: cover; display: block; transition: transform .5s ease, filter .5s ease; filter: brightness(.9); }
+        .port-gallery-grid img:hover { transform: scale(1.04); filter: brightness(1.05); }
+
+        .port-card.hidden { display: none; }
+
+        /* ══════════════════════════════════════════════
+           VIDEO PREVIEW EN MINIATURA — AUTOPLAY ON SCROLL
+        ══════════════════════════════════════════════ */
+
+        /* Grain cinematográfico sobre cada card */
+        .port-media::before, .showreel-frame::before {
+            content: '';
+            position: absolute; inset: 0; z-index: 6;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+            opacity: 0.55;
+            mix-blend-mode: overlay;
+        }
+
+        /* Scan lines sutiles sobre el video en preview */
+        .port-media::after, .showreel-frame::after {
+            content: '';
+            position: absolute; inset: 0; z-index: 7;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent, transparent 2px,
+                rgba(0,0,0,0.018) 2px, rgba(0,0,0,0.018) 3px
+            );
+            opacity: 0;
+            transition: opacity .4s ease;
+        }
+        .port-media.preview-active::after, .showreel-frame.preview-active::after {
+            opacity: 1;
+        }
+
+        /* Video inline del preview */
+        .port-media .preview-video,
+        .showreel-frame .preview-video {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity .6s ease;
+            pointer-events: none;
+        }
+        .port-media.preview-active .preview-video,
+        .showreel-frame.preview-active .preview-video {
+            opacity: 1;
+        }
+
+        /* Cuando el preview está activo, oscurecer placeholder */
+        .port-media.preview-active .video-placeholder,
+        .showreel-frame.preview-active .video-placeholder {
+            opacity: 0.15;
+        }
+
+        /* Barra inferior con controles del preview */
+        .preview-bar {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            z-index: 9;
+            padding: 10px 14px 10px;
+            background: linear-gradient(to top, rgba(6,3,0,0.88) 0%, transparent 100%);
+            display: flex; align-items: center; justify-content: space-between;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity .3s ease, transform .3s ease;
+            pointer-events: none;
+        }
+        .port-media.preview-active .preview-bar,
+        .showreel-frame.preview-active .preview-bar {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .preview-label {
+            font-size: 8px; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: rgba(212,168,67,0.7);
+            display: flex; align-items: center; gap: 6px;
+        }
+        .preview-label::before {
+            content: '';
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--fire2);
+            box-shadow: 0 0 6px rgba(232,82,10,0.8);
+            animation: recDot 1.4s ease-in-out infinite alternate;
+        }
+        @keyframes recDot { from { opacity: 0.5; } to { opacity: 1; } }
+
+        .preview-sound-hint {
+            color: rgba(212,168,67,0.4);
+            font-size: 13px;
+            display: flex; align-items: center;
+        }
+
+        /* Borde dorado sutil cuando está previsualizando */
+        .port-media.preview-active,
+        .showreel-frame.preview-active {
+            box-shadow: 0 0 0 1px rgba(212,168,67,0.18), 0 0 30px rgba(212,168,67,0.06);
+        }
+
+        /* Cursor expandir al pasar sobre preview activo */
+        .port-media.preview-active,
+        .showreel-frame.preview-active {
+            cursor: zoom-in;
+        }
+
+        /* Icono expand en esquina superior derecha */
+        .preview-expand-hint {
+            position: absolute;
+            top: 10px; right: 12px;
+            z-index: 9;
+            background: rgba(6,3,0,0.65);
+            border: 1px solid rgba(212,168,67,0.18);
+            color: rgba(212,168,67,0.6);
+            width: 26px; height: 26px;
+            border-radius: 2px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px;
+            opacity: 0;
+            transition: opacity .3s ease .2s;
+            pointer-events: none;
+        }
+        .port-media.preview-active .preview-expand-hint,
+        .showreel-frame.preview-active .preview-expand-hint {
+            opacity: 1;
+        }
+
+        /* Textura de viñeta más pronunciada en cada card cuando preview */
+        .port-media.preview-active .video-placeholder::after,
+        .showreel-frame.preview-active .video-placeholder::after {
+            background: linear-gradient(to bottom, rgba(6,3,0,0.35) 0%, transparent 30%, transparent 70%, rgba(6,3,0,0.55) 100%);
+        }
+
+        /* HUB MODULAR DE SERVICIOS (ECOSISTEMA) */
+        .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; width: 100%; }
+        .eco-card { background: var(--card); padding: 54px 44px; position: relative; overflow: hidden; transition: all .4s cubic-bezier(.16,1,.3,1); border-top: 1px solid rgba(212,168,67,.08); box-sizing: border-box; }
+        .eco-card:hover { transform: translateY(-6px); box-shadow: 0 25px 65px rgba(0,0,0,.5); border-top-color: var(--g1); }
+        .eco-icon { font-size: 34px; color: var(--g2); margin-bottom: 28px; display: block; }
+        .eco-card h4 { font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+        .eco-card p { font-size: 14px; color: var(--muted); line-height: 1.9; margin-bottom: 0; }
+        .eco-featured { grid-column: span 2; background: linear-gradient(150deg, rgba(212,168,67,.05), var(--card)); }
+
+        /* CONTROL Y TRANSPARENCIA DE PROCESOS (PIPELINE) */
+        .pipe-grid { display: grid; grid-template-columns: repeat(5, 1fr); max-width: 1200px; margin: 60px auto 0; gap: 16px; width: 100%; }
+        .pipe-step { text-align: center; padding: 0 10px; box-sizing: border-box; }
+        .pipe-n { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(212,168,67,.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; background: var(--ink2); font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--g1); transition: all 0.4s ease; }
+        .pipe-step:hover .pipe-n { border-color: var(--g2); background: rgba(212,168,67,0.06); box-shadow: 0 0 25px rgba(212,168,67,0.2); }
+        .pipe-t { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--g2); margin-bottom: 12px; }
+        .pipe-d { font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+        /* HUB CREATIVO DE DIRECCIÓN DE ARTE */
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 60px; width: 100%; }
+        .team-card { background: var(--card); padding: 50px 40px; border-top: 1px solid rgba(212,168,67,.06); transition: all 0.4s ease; box-sizing: border-box; }
+        .team-card:hover { transform: translateY(-5px); box-shadow: 0 20px 55px rgba(0,0,0,.45); border-top-color: var(--g1); }
+        .team-role { font-size: 9px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--g1); margin-bottom: 16px; }
+        .team-name { font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+        .team-desc { font-size: 13.5px; color: var(--muted); margin-bottom: 0; line-height: 1.85; }
+
+        /* SISTEMA DE INGESTA DE PROYECTOS (BRIEFING PORTAL) */
+        .brief-sec { text-align: center; background: radial-gradient(circle at 50% 50%, rgba(212,168,67,.08), transparent 65%); }
+        .brief-sec h2 { font-size: clamp(36px, 6.5vw, 78px); margin-bottom: 20px; }
+        .brief-sec > p { letter-spacing: 3px; font-size: 11px; font-weight: 600; margin-bottom: 60px; color: var(--muted); text-transform: uppercase; }
+        .brief-pills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 900px; margin: 0 auto 50px; }
+        .pill-in { position: absolute; opacity: 0; pointer-events: none; }
+        .pill-in:checked + .pill-btn { background: rgba(212,168,67,.15); border-color: var(--g1); color: var(--white); box-shadow: 0 0 20px rgba(212,168,67,.15); }
+        .pill-btn { display: inline-block; background: rgba(212,168,67,.03); border: 1px solid rgba(212,168,67,.1); padding: 12px 24px; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); transition: all .3s; cursor: pointer; }
+        .pill-btn:hover { border-color: rgba(212,168,67,.3); color: var(--g2); }
+
+        /* FOOTER */
+        footer { border-top: 1px solid rgba(212,168,67,.08); padding: 80px 24px; text-align: center; background: #050200; }
+        .footer-logo { height: 55px; width: auto; object-fit: contain; margin-bottom: 22px; filter: drop-shadow(0 0 8px rgba(212,168,67,0.2)); opacity: 0.7; }
+        footer p { font-size: 11px; color: rgba(212,168,67,.3); letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; }
+        footer strong { color: rgba(212,168,67,.45); }
+        
+        /* RESPONSIVIDAD TOTAL ABSOLUTA */
+        @media screen and (max-width: 1024px) {
+            .eco-grid, .team-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+            .eco-featured { grid-column: span 2; }
+            .pipe-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .sec { padding: 100px 0; }
+            header { padding: 16px; position: absolute; backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--ink); }
+            .header-inner { flex-direction: column; gap: 16px; }
+            .main-nav ul { gap: 20px; flex-wrap: wrap; justify-content: center; }
+            .eco-grid, .team-grid, .pipe-grid { grid-template-columns: 1fr; gap: 4px; width: 100%; }
+            .eco-featured { grid-column: span 1; }
+            .eco-card, .team-card { padding: 44px 24px; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat { padding: 36px 12px; border-bottom: 1px solid rgba(212,168,67,.06); }
+            .stat:nth-child(2) { border-right: none; }
+            .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+            .stat:nth-child(3) { border-right: 1px solid rgba(212,168,67,.06); }
+            .stat-n { font-size: 44px; }
+            .cta-row { flex-direction: column; width: 100%; max-width: 360px; margin: 0 auto; gap: 12px; }
+            .btn-gold, .btn-ghost { width: 100%; text-align: center; box-sizing: border-box; }
+            .hero-h1 { font-size: clamp(38px, 9vw, 65px); }
+            .vfx-content { padding: 24px; }
+            .vfx-content h4 { font-size: 18px; }
+            .mute-btn { bottom: 20px; right: 20px; width: 42px; height: 42px; font-size: 16px; }
+            .hero-center-logo { height: 75px; }
+            #hero-particles { width: 100%; height: 100%; }
+            .hero-sideline, .hero-sideline-r { display: none; }
+            .hero-counters { flex-wrap: wrap; }
+            .hero-counter { min-width: 50%; border-bottom: 1px solid rgba(212,168,67,0.08); }
+            .hero-scroll { display: none; }
+            .hc-n { font-size: 26px; }
+            .port-grid { grid-template-columns: 1fr; }
+            .port-card--wide { grid-column: span 1; }
+            .port-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .port-gallery-grid img { height: 180px; }
+            .port-filters { gap: 8px; }
+            .showreel-wrap { margin-bottom: 48px; }
+        }
+    </style>
+</head>
+<body data-aos-easing="ease" data-aos-duration="900" data-aos-delay="0">
+
+<header>
+    <div class="header-inner">
+        <a href="index.html" class="brand-container">
+            <img src="icons/Kaizen PNG.png" alt="Logo Corporativo Kaizen Leap" class="brand-logo-img">
+            <h2 class="logo-txt">Kaizen <em>Leap</em></h2>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="nav-proposal-highlight"><a href="https://kaizenleap.github.io/KaizenLeapOn/" target="_blank">Modelos de Inversión</a></li>
+                <li><a href="#showroom">Showroom</a></li>
+                <li><a href="#ecosistema">Ecosistema</a></li>
+                <li><a href="#pipeline">Pipeline</a></li>
+                <li><a href="#hub">Hub Creativo</a></li>
+                <li><a href="#briefing">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <!-- Capas de fondo en orden de z-index -->
+    <div class="hero-grid-bg"></div>
+    <canvas id="hero-particles"></canvas>
+    <div class="hero-bokeh"></div>
+    <div class="hero-bokeh-extra"></div>
+    <div class="hero-video-bg">
+        <video id="hero-video" autoplay loop muted playsinline preload="auto">
+            <source src="assets/video/showroom.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="hero-scanlines"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Barras laterales ornamentales -->
+    <div class="hero-sideline">
+        <div class="sl-bar"></div>
+        <div class="sl-dot"></div>
+        <div class="sl-year">2026</div>
+        <div class="sl-dot"></div>
+        <div class="sl-bar"></div>
+    </div>
+    <div class="hero-sideline-r">
+        <div class="sl-bar"></div>
+        <div class="sl-label">Kaizen · Leap</div>
+        <div class="sl-bar"></div>
+    </div>
+
+    <!-- Control de audio -->
+    <button id="audio-toggle" class="mute-btn" title="Activar Audio">
+        <i class="bi bi-volume-mute"></i>
+    </button>
+    
+    <div class="wrap">
+        <!-- Isotipo -->
+        <div class="hero-identity-shield" data-aos="zoom-in" data-aos-delay="50">
+            <img src="icons/Logo PNG.png" alt="Isotipo Oficial Kaizen Leap" class="hero-center-logo">
+        </div>
+        
+        <!-- Eyebrow -->
+        <div class="eyebrow" data-aos="fade-up" data-aos-delay="80">Marketing Global · VFX · Cine Comercial</div>
+
+        <!-- Título con ornamentos -->
+        <div class="hero-h1-wrap" data-aos="fade-up" data-aos-delay="120">
+            <h1 class="hero-h1">Visión de <em>Cine</em>,<br>Estrategia de <em>Negocio</em></h1>
+        </div>
+
+        <!-- Divider ornamental -->
+        <div class="hero-divider" data-aos="fade-up" data-aos-delay="150">
+            <div class="hero-divider-gem"></div>
+        </div>
+
+        <!-- Párrafo -->
+        <p class="hero-p" data-aos="fade-up" data-aos-delay="170">Redefinimos la presencia digital de marcas líderes. En <strong>Kaizen Leap</strong> fusionamos dirección de arte premium, VFX avanzados y marketing estratégico para convertir tu negocio en <strong>autoridad indiscutible</strong> con <strong>retorno medible</strong>.</p>
+        
+        <!-- Counters animados -->
+        <div class="hero-counters" data-aos="fade-up" data-aos-delay="190">
+            <div class="hero-counter">
+                <span class="hc-n" data-target="50">0</span>
+                <span class="hc-l">Proyectos+</span>
+            </div>
+            <div class="hero-counter">
+                <span class="hc-n" data-target="100">0</span>
+                <span class="hc-l">% Original</span>
+            </div>
+            <div class="hero-counter">
+                <span class="hc-n" data-suffix=" Años">5</span>
+                <span class="hc-l">Experiencia</span>
+            </div>
+            <div class="hero-counter">
+                <span class="hc-n" data-suffix="K">8</span>
+                <span class="hc-l">VFX Workflow</span>
+            </div>
+        </div>
+        
+        <!-- CTAs -->
+        <div class="cta-row" data-aos="fade-up" data-aos-delay="210">
+            <a href="https://kaizenleap.github.io/KaizenLeapOn/" target="_blank" class="btn-gold">✦ Ver Propuestas Comerciales</a>
+            <a href="#briefing" class="btn-ghost">Iniciar Proyecto</a>
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+    </div>
+</section>
+
+<div class="stats">
+    <div class="stats-inner">
+        <div class="stat" data-aos="fade-up">
+            <span class="stat-n">50+</span>
+            <span class="stat-l">Proyectos Globales</span>
+        </div>
+        <div class="stat" data-aos="fade-up" data-aos-delay="100">
+            <span class="stat-n">100%</span>
+            <span class="stat-l">Contenido Original</span>
+        </div>
+        <div class="stat" data-aos="fade-up" data-aos-delay="200">
+            <span class="stat-n">8K VFX</span>
+            <span class="stat-l">Workflow Cinematic</span>
+        </div>
+        <div class="stat" data-aos="fade-up" data-aos-delay="300">
+            <span class="stat-n">ROI</span>
+            <span class="stat-l">Resultados Líquidos</span>
+        </div>
+    </div>
+</div>
+
+<section class="sec" id="showroom">
+<div class="wrap">
+    <div class="sec-eye" data-aos="fade-right">Portafolio Real · Producción Aplicada</div>
+    <h2 class="sec-h" data-aos="fade-up">Trabajo que habla<br><em>por sí solo</em></h2>
+    <p style="max-width:620px;margin-bottom:64px;" data-aos="fade-up">Cada pieza fue producida con intención comercial, dirección de arte aplicada y entrega profesional. Esto es lo que hacemos, no lo que prometemos.</p>
+
+    <!-- SHOWREEL PRINCIPAL (CLICK-TO-PLAY) -->
+    <div class="showreel-wrap" data-aos="fade-up">
+        <div class="showreel-label">✦ SHOWREEL OFICIAL · KAIZEN LEAP · 2026</div>
+        <div class="showreel-frame click-to-play" data-video-id="1KRveqzXiVlQnsqOeZ22oQX6NNsZHrOmT">
+            <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1KRveqzXiVlQnsqOeZ22oQX6NNsZHrOmT&sz=w1200');">
+                <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTROS DE INDUSTRIA -->
+    <div class="port-filters" data-aos="fade-up">
+        <button class="port-filter active" data-filter="all">Todo</button>
+        <button class="port-filter" data-filter="comercial">Comerciales</button>
+        <button class="port-filter" data-filter="musica">Música & VideoClips</button>
+        <button class="port-filter" data-filter="nightlife">Nightlife & Eventos</button>
+        <button class="port-filter" data-filter="lifestyle">Lifestyle & Barberías</button>
+        <button class="port-filter" data-filter="corporativo">Corporativo & Social</button>
+        <button class="port-filter" data-filter="gastronomia">Gastronomía</button>
+    </div>
+
+    <!-- GRID DE PORTAFOLIO ORIGINAL INTACTO -->
+    <div class="port-grid" id="portGrid">
+
+        <!-- ══ COMERCIALES ══ -->
+        <div class="port-card" data-cat="comercial" data-aos="fade-up">
+            <div class="port-media click-to-play" data-video-id="1DSrOOW2OXd5gvii7r7K-kNJr-z0DcnQR">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1DSrOOW2OXd5gvii7r7K-kNJr-z0DcnQR&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Comercial · Parque Temático</span>
+                <h4>Rueda 360° · Salitre Mágico</h4>
+                <p>Producción audiovisual completa. Cinematografía dinámica, dirección de arte aplicada y edición de impacto para atracción icónica.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="comercial" data-aos="fade-up" data-aos-delay="60">
+            <div class="port-media click-to-play" data-video-id="1T6fme94oxDWfrUe7hbI_0WHAXmWvky4s">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1T6fme94oxDWfrUe7hbI_0WHAXmWvky4s&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Comercial · Campaña Navideña</span>
+                <h4>Christmas Fest · Salitre Mágico</h4>
+                <p>Producción de temporada con dirección de arte festiva, timing musical preciso y narrativa emocional orientada a familia.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="comercial" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media click-to-play" data-video-id="1U8NQy39JC7uPcGRueF-dErpg2sJqjJSv">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1U8NQy39JC7uPcGRueF-dErpg2sJqjJSv&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Comercial · Entretenimiento Familiar</span>
+                <h4>Finkana & Salitre Mágico</h4>
+                <p>Pieza publicitaria de campaña de temporada. Narrativa visual diseñada para maximizar conversión y recordación de marca.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="comercial" data-aos="fade-up" data-aos-delay="100">
+            <div class="port-media click-to-play" data-video-id="1jGNLV-7F-XQmNOXLCM4y8o-AxsLSme53">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1jGNLV-7F-XQmNOXLCM4y8o-AxsLSme53&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Comercial · Producto Industrial</span>
+                <h4>Bota Petrolera · Red Moose</h4>
+                <p>Comercial de producto con enfoque cinematográfico. Iluminación técnica, detalle premium y narrativa de marca para sector industrial.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="comercial" data-aos="fade-up" data-aos-delay="120">
+            <div class="port-media click-to-play" data-video-id="1kyoADdaUDCj7_ZYZiWGSNbKK1mRBgIgy">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1kyoADdaUDCj7_ZYZiWGSNbKK1mRBgIgy&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Comercial · Hotelería</span>
+                <h4>Ayenda Hoteles · Campaña Pandemia</h4>
+                <p>Campaña publicitaria para plataforma hotelera. Mensaje de esperanza con producción controlada y alto valor emocional.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="corporativo" data-aos="fade-up">
+            <div class="port-media click-to-play" data-video-id="1SvwQInV9yRPKyAx8xDmcXZPjlAISnRyl">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1SvwQInV9yRPKyAx8xDmcXZPjlAISnRyl&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Corporativo · Evento Empresarial</span>
+                <h4>Kola Román · Evento Corporativo</h4>
+                <p>Cobertura audiovisual de evento corporativo de marca reconocida. Narrativa institucional con producción de alto estándar.</p>
+            </div>
+        </div>
+
+        <!-- ══ MÚSICA & VIDEOCLIPS (REELS VERTICALES 9:16) ══ -->
+        <div class="port-card port-card--reel" data-cat="musica" data-aos="fade-up">
+            <div class="port-media port-media--reel click-to-play" data-video-id="1lxu4VyOGZyyPuZVQvkzw2a1hEWBmHICQ">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1lxu4VyOGZyyPuZVQvkzw2a1hEWBmHICQ&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">VideoClip · Dancehall · 4K</span>
+                <h4>World Whine 4K · Tribal Kush & Blaiz Fayah</h4>
+                <p>Videoclip de producción cinematográfica en 4K. Dirección de arte y fotografía de autor para artistas internacionales de dancehall.</p>
+            </div>
+        </div>
+
+        <div class="port-card port-card--reel" data-cat="musica" data-aos="fade-up" data-aos-delay="60">
+            <div class="port-media port-media--reel click-to-play" data-video-id="1N1NYVc2FNiQ6qlnRVVVdlejoC02RltbB">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1N1NYVc2FNiQ6qlnRVVVdlejoC02RltbB&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">VideoClip · Reggaetón · Premium</span>
+                <h4>La Tóxica · Oliver Romero</h4>
+                <p>Producción audiovisual de videoclip con dirección de arte, locaciones y edición cinematográfica de nivel internacional.</p>
+            </div>
+        </div>
+
+        <div class="port-card port-card--reel" data-cat="musica" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media port-media--reel click-to-play" data-video-id="14ptsJz0uA80JOCWB5hD8CCvKbJSF6pC6">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=14ptsJz0uA80JOCWB5hD8CCvKbJSF6pC6&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">VideoClip · Urbano</span>
+                <h4>Oliver Romero · Producción Visual</h4>
+                <p>Videoclip con cinematografía de alta gama, dirección de arte aplicada y postproducción de color cinemática.</p>
+            </div>
+        </div>
+
+        <div class="port-card port-card--reel" data-cat="musica" data-aos="fade-up" data-aos-delay="100">
+            <div class="port-media port-media--reel click-to-play" data-video-id="1RXrsmaWruF4wnHfzG-J9-C-z1KPBPgm6">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1RXrsmaWruF4wnHfzG-J9-C-z1KPBPgm6&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">VideoClip · Vallenato · Artista Nacional</span>
+                <h4>Mi Asaltacuna · Carlos Manjarres</h4>
+                <p>Producción audiovisual para artista de talla nacional. Narrativa visual y dirección de arte con estética contemporánea.</p>
+            </div>
+        </div>
+
+        <div class="port-card port-card--reel" data-cat="musica" data-aos="fade-up" data-aos-delay="120">
+            <div class="port-media port-media--reel click-to-play" data-video-id="1CVaRePudMkP9vqb7Y67arzGly5j9ogYX">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1CVaRePudMkP9vqb7Y67arzGly5j9ogYX&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">VideoClip · Dancehall · Reggae</span>
+                <h4>Bad Gyal · Kybba Hayvee</h4>
+                <p>Videoclip de alta energía con dirección de cámara dinámica, producción de locación y edición de ritmo cinematográfico.</p>
+            </div>
+        </div>
+
+        <div class="port-card port-card--reel" data-cat="musica" data-aos="fade-up" data-aos-delay="140">
+            <div class="port-media port-media--reel click-to-play" data-video-id="10i105Jkf6-fr4vJJ9Ic3cJd7Et4QXbar">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=10i105Jkf6-fr4vJJ9Ic3cJd7Et4QXbar&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">VideoClip · Session · Basshall</span>
+                <h4>Basshall Session #2 · Tribal Kush & Eichem</h4>
+                <p>Producción de session musical con cinematografía de estudio, color cinemático y edición de alta cadencia.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="musica" data-aos="fade-up" data-aos-delay="160">
+            <div class="port-media click-to-play" data-video-id="1sQ_4nlfqAF97l69OCkAsFnXfcduqBJLL">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1sQ_4nlfqAF97l69OCkAsFnXfcduqBJLL&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Documental Musical · Academia</span>
+                <h4>DNA Music · Tribal Kush</h4>
+                <p>Documental sobre la academia musical con narrativa de autor, entrevistas y cobertura de producción de alto valor.</p>
+            </div>
+        </div>
+
+        <!-- ══ NIGHTLIFE & EVENTOS ══ -->
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up">
+            <div class="port-media click-to-play" data-video-id="1Ek4gXWNFNRrjRJbxLsA4EN3ZWisvLUoW">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1Ek4gXWNFNRrjRJbxLsA4EN3ZWisvLUoW&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Nightlife · Cartagena · Club</span>
+                <h4>NIGGAZ N922 · Cartagena</h4>
+                <p>Cobertura cinematográfica de evento nocturno en Cartagena. Cinematografía en baja luz y edición rítmica de alto impacto.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up" data-aos-delay="60">
+            <div class="port-media click-to-play" data-video-id="162YOMWg5Vwppi0nBl0HqQ-CrcP9PwPMq">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=162YOMWg5Vwppi0nBl0HqQ-CrcP9PwPMq&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Nightlife · Club · Producción Premium</span>
+                <h4>Get Down Club</h4>
+                <p>Producción audiovisual premium para discoteca. Narrativa inmersiva, uso estético de luz artificial y ritmo de corte internacional.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media click-to-play" data-video-id="1hX37AllXjXmAGG5bPgxrxbEh8C_hre-m">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1hX37AllXjXmAGG5bPgxrxbEh8C_hre-m&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Nightlife · Cartagena · Dancehall</span>
+                <h4>Colombia Basshall · Cartagena</h4>
+                <p>Cobertura de evento de dancehall en Cartagena. Cinematografía de evento en vivo con dirección de arte visual aplicada.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up" data-aos-delay="100">
+            <div class="port-media click-to-play" data-video-id="1B-ZOO_fH0qt5KyQcnE9yferJH9eMiDeP">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1B-ZOO_fH0qt5KyQcnE9yferJH9eMiDeP&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Nightlife · Evento · Ryan Castro</span>
+                <h4>Trip & Drink · Ryan Castro</h4>
+                <p>Producción visual de evento con artista reconocido. Cobertura cinematográfica de alto estándar con edición dinámica.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up" data-aos-delay="120">
+            <div class="port-media click-to-play" data-video-id="1tYZemZmAjm1Zk0Iy-AhRhKpzzRD6MUyM">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1tYZemZmAjm1Zk0Iy-AhRhKpzzRD6MUyM&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Nightlife · Dancehall · Evento</span>
+                <h4>Negro Flow · B14</h4>
+                <p>Cobertura de evento de dancehall con producción dinámica, cinematografía de baja luz y edición de ritmo acelerado.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up" data-aos-delay="140">
+            <div class="port-media click-to-play" data-video-id="1sduJfwYljS4Hm77Wb6aFjc0amObDZSIy">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1sduJfwYljS4Hm77Wb6aFjc0amObDZSIy&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Nightlife · Festival · Dancehall</span>
+                <h4>Basshall Meets LionFiah</h4>
+                <p>Producción de festival dancehall con cinematografía de evento en vivo, crowd shots y edición de alto impacto visual.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media click-to-play" data-video-id="15Vsum-3u_AWyffqxpVSw3Wy-rWDZSWwh">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=15Vsum-3u_AWyffqxpVSw3Wy-rWDZSWwh&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Nightlife · Bogotá · Theatron</span>
+                <h4>Party On Fire · Corto</h4>
+                <p>Pieza audiovisual de alta energía para evento nocturno en Bogotá. Edición rítmica con cinematografía de ambiente nocturno.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up" data-aos-delay="60">
+            <div class="port-media click-to-play" data-video-id="1vewzVGQXCaICjJ1oXaBcxG6E1VjD1j8z">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1vewzVGQXCaICjJ1oXaBcxG6E1VjD1j8z&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Nightlife · Club · Bogotá</span>
+                <h4>Theatron Bogotá</h4>
+                <p>Producción para el club más icónico de Colombia. Cinematografía de ambiente, dirección de arte nocturna y edición de alto impacto.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="nightlife" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media click-to-play" data-video-id="1SzETjT-7YpU-2q2k4TKX0-x_NvAVLtxz">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1SzETjT-7YpU-2q2k4TKX0-x_NvAVLtxz&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">DJ SET · Mix · Basshall Sound System</span>
+                <h4>Basshall Mix · Best Dancehall & Moombahton</h4>
+                <p>Producción audiovisual para DJ SET de alta producción. Mezcla de dancehall con edición visual sincronizada al ritmo.</p>
+            </div>
+        </div>
+
+        <!-- ══ LIFESTYLE & BARBERÍAS ══ -->
+        <div class="port-card port-card--reel" data-cat="lifestyle" data-aos="fade-up">
+            <div class="port-media port-media--reel click-to-play" data-video-id="1X3XJ5jz7cnRmGszC1njk_20fDv2ZtJpa">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1X3XJ5jz7cnRmGszC1njk_20fDv2ZtJpa&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Barbería · Reel · Lifestyle</span>
+                <h4>Planadas Barber</h4>
+                <p>Reel de barbería con producción vertical optimizada para redes. Detalle de servicio, ambiente y marca personal del establecimiento.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="60">
+            <div class="port-media click-to-play" data-video-id="1W3h_3ytyRnuJB8CW19G9qxe-Q4hmic1P">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1W3h_3ytyRnuJB8CW19G9qxe-Q4hmic1P&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Barbería · Lifestyle · Mosquera</span>
+                <h4>Cambio de Look · Sede Mosquera</h4>
+                <p>Producción de contenido lifestyle para barbería. Narrativa de transformación con cinematografía de detalle y edición dinámica.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media click-to-play" data-video-id="1JvKwcmx0nvaFgVcdCt3nSEyVDKwfAd1j">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1JvKwcmx0nvaFgVcdCt3nSEyVDKwfAd1j&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Barbería · Look Premium · Madrid</span>
+                <h4>Presentación Look · La Mansión</h4>
+                <p>Producción premium de presentación de look. Iluminación de estudio, detalle técnico y narrativa de marca de alto estándar.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="100">
+            <div class="port-media click-to-play" data-video-id="16YOhLaKz-YnEsCH-dX1E4q6r7owZE1uu">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=16YOhLaKz-YnEsCH-dX1E4q6r7owZE1uu&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Barbería · Acción · Estética</span>
+                <h4>Action Shot · Barbas Kingdom</h4>
+                <p>Producción de acción para barbería con cinematografía dinámica, slow motion y edición de alto impacto para contenido viral.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="120">
+            <div class="port-media click-to-play" data-video-id="1U5ZtEts3-onAoh87ZWH0brF5yZ3oQtaR">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1U5ZtEts3-onAoh87ZWH0brF5yZ3oQtaR&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Salón de Belleza · Lifestyle</span>
+                <h4>Salón K&Q · Contenido de Marca</h4>
+                <p>Producción audiovisual para salón de belleza. Ambiente, servicio y narrativa de marca orientada a captación de nuevos clientes.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="140">
+            <div class="port-media click-to-play" data-video-id="1-UqrHAtySG1XsF3X95lZ1vYr5p-bsYfw">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1-UqrHAtySG1XsF3X95lZ1vYr5p-bsYfw&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Estudio de Tatuajes · Arte Corporal</span>
+                <h4>Brian Tattoo · Producción de Marca</h4>
+                <p>Producción visual para artista del tatuaje. Proceso, obra y ambiente con fotografía y video que elevan la percepción de marca.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media click-to-play" data-video-id="1BNS4uJ_Fpz9b9GMsvBYIIFixtSLu_YyM">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1BNS4uJ_Fpz9b9GMsvBYIIFixtSLu_YyM&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Fitness · Entrenamiento Personal</span>
+                <h4>Reel León Gym</h4>
+                <p>Reel de alto impacto para gimnasio. Cinematografía de acción, motivación y narrativa de marca para redes sociales.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="100">
+            <div class="port-media click-to-play" data-video-id="1Q06tISHvRbjkHehTMw72u3Yx1jfEFzsY">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1Q06tISHvRbjkHehTMw72u3Yx1jfEFzsY&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Fitness · Acción · Gym</span>
+                <h4>Gym Action · León Gym</h4>
+                <p>Producción de acción para entrenamiento personal. Slow motion, dinamismo y edición de alto ritmo para contenido fitness premium.</p>
+            </div>
+        </div>
+
+        <!-- ══ CORPORATIVO & SOCIAL ══ -->
+        <div class="port-card" data-cat="corporativo" data-aos="fade-up" data-aos-delay="60">
+            <div class="port-media click-to-play" data-video-id="1IDzVqA3g6joRI5xqyqTQjUKFh-Updojy">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1IDzVqA3g6joRI5xqyqTQjUKFh-Updojy&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Corporativo · Industria Siderúrgica</span>
+                <h4>Inducción Gerdau Diaco</h4>
+                <p>Producción audiovisual corporativa para empresa siderúrgica internacional. Narrativa institucional, locación industrial y postproducción.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="corporativo" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media click-to-play" data-video-id="1UucqJppLD89rVBA4lyHAB9OiMFemQCQP">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1UucqJppLD89rVBA4lyHAB9OiMFemQCQP&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Corporativo · ARL · Evento</span>
+                <h4>Encuentro de Brigadas · Asalvo</h4>
+                <p>Cobertura audiovisual de evento corporativo de salud y seguridad ocupacional. Narrativa institucional con alto valor documental.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="corporativo" data-aos="fade-up" data-aos-delay="100">
+            <div class="port-media click-to-play" data-video-id="1d1NHssr7yssXUUFqJ_1voikiJX1blzit">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1d1NHssr7yssXUUFqJ_1voikiJX1blzit&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Corporativo · ARL · Evento Masivo</span>
+                <h4>Encuentro de Brigadas · ARL Bolívar</h4>
+                <p>Producción audiovisual de evento masivo institucional. Cobertura completa con narrativa documental y edición de alto estándar.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="corporativo" data-aos="fade-up" data-aos-delay="120">
+            <div class="port-media click-to-play" data-video-id="1dGNXjacPdtM2SPxqTRrtK7fowM_JkZbN">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1dGNXjacPdtM2SPxqTRrtK7fowM_JkZbN&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Salud · Odontología · Comercial</span>
+                <h4>Ariza Dental Center · Consulta</h4>
+                <p>Pieza audiovisual para centro odontológico. Narrativa comparativa con producción limpia y mensaje de posicionamiento claro.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="corporativo" data-aos="fade-up" data-aos-delay="60">
+            <div class="port-media click-to-play" data-video-id="17DDW5GXegOgh90r6BwIzxWpNnceLoKRZ">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=17DDW5GXegOgh90r6BwIzxWpNnceLoKRZ&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Social · Fundación · Niñez</span>
+                <h4>Fundación Burbujitas de Papel</h4>
+                <p>Producción documental para fundación de impacto social con niñez. Narrativa emocional y alta calidad cinematográfica.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="corporativo" data-aos="fade-up" data-aos-delay="80">
+            <div class="port-media click-to-play" data-video-id="14nFZEW6bLaaFlGGAFgINjpX8AciA5EHY">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=14nFZEW6bLaaFlGGAFgINjpX8AciA5EHY&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Social · Gobierno · Feria Local</span>
+                <h4>Feria Local · Alcaldía de Bogotá</h4>
+                <p>Cobertura audiovisual de feria local institucional. Producción de evento con narrativa documental para entidad pública.</p>
+            </div>
+        </div>
+
+        <div class="port-card" data-cat="corporativo" data-aos="fade-up" data-aos-delay="100">
+            <div class="port-media click-to-play" data-video-id="1e6C0Y-kKtiwZUUunP_q82-zv_q9MXp3w">
+                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1e6C0Y-kKtiwZUUunP_q82-zv_q9MXp3w&sz=w800');">
+                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                </div>
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Cortometraje · Ficción · Narrativa</span>
+                <h4>Su Felicidad Es La Mía</h4>
+                <p>Cortometraje de ficción con dirección de autor, fotografía cinematográfica y narrativa emocional de alto impacto.</p>
+            </div>
+        </div>
+
+        <!-- ══ GASTRONOMÍA ══ -->
+        <div class="port-card port-card--wide" data-cat="gastronomia" data-aos="fade-up">
+            <div class="port-gallery-grid">
+                <img src="https://drive.google.com/thumbnail?id=1jnxWAtW7vjFAOPhG_d4B_KEuY3tPeRC-&sz=w800" alt="Súper Pizza — Producción Comercial" loading="lazy">
+                <img src="https://drive.google.com/thumbnail?id=1A7BL_UnDhOmxJmNCpNKPRqcH3M0-Gbjv&sz=w800" alt="Súper Pizza — Local y Producto" loading="lazy">
+                <img src="https://drive.google.com/thumbnail?id=1Bjwsei6Q3r_XU_nPSo8QokPi7fiHSC3o&sz=w800" alt="Súper Pizza — Lifestyle" loading="lazy">
+                <img src="https://drive.google.com/thumbnail?id=1NC8cJv_1PIui1LhhuKjTOfJFgg6sI3c3&sz=w800" alt="Súper Pizza — Modelo con producto" loading="lazy">
+            </div>
+            <div class="port-info">
+                <span class="port-tag">Gastronomía · Fotografía Comercial con Modelos</span>
+                <h4>Súper Pizza · Campaña Visual Completa</h4>
+                <p>Producción fotográfica comercial para cadena de pizzerías. Dirección de arte, modelos, locación propia de la marca y postproducción premium orientada a redes y web.</p>
+            </div>
+        </div>
+
+    </div><!-- /port-grid -->
+</div>
+</section>
+
+<hr class="div-line">
+
+<section class="sec" id="ecosistema">
+<div class="wrap">
+    <div class="sec-eye" data-aos="fade-right">Ecosistemas Temáticos Claros</div>
+    <h2 class="sec-h" data-aos="fade-up">Estructura de Contenido para<br><em>Marcas de Nivel Internacional</em></h2>
+    
+    <div class="eco-grid">
+        <div class="eco-card eco-featured" data-aos="fade-up">
+            <span class="eco-icon"><i class="bi bi-camera-reels"></i></span>
+            <h4>Cine Comercial & VFX Workflows</h4>
+            <p>Estructuración e integración de activos audiovisual de vanguardia. En Kaizen Leap producimos piezas comerciales premium y contenido omnicanal unificado bajo procesos estrictos de post-producción digital y efectos visuales de alta gama.</p>
+        </div>
+        <div class="eco-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="eco-icon"><i class="bi bi-fullscreen"></i></span>
+            <h4>Fotografía High-End Studio</h4>
+            <p>Captura de activos visuales de alta definición con iluminación y dirección artística de nivel cinematográfico, organizados de forma limpia en módulos estratégicos.</p>
+        </div>
+        <div class="eco-card" data-aos="fade-up" data-aos-delay="200">
+            <span class="eco-icon"><i class="bi bi-cpu"></i></span>
+            <h4>Digital Twins & AI Spokesperson</h4>
+            <p>Evolución técnica del talento en pantalla. Configuración inteligente de avatares corporativos y voceros remotos hiperrealistas para mantener un ritmo de comunicación global y constante.</p>
+        </div>
+        <div class="eco-card" data-aos="fade-up" data-aos-delay="300">
+            <span class="eco-icon"><i class="bi bi-pie-chart"></i></span>
+            <h4>Estrategia de Conversión & Meta Ads</h4>
+            <p>Administración y despliegue técnico de campañas publicitarias estructuradas específicamente para multiplicar el retorno de inversión de los módulos audiovisuales desarrollados.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<hr class="div-line">
+
+<section class="sec" id="pipeline">
+<div class="wrap">
+    <div class="sec-eye" data-aos="fade-right">Transparencia y Control Absoluto</div>
+    <h2 class="sec-h" data-aos="fade-up">El Flujo Limpio del<br><em>Activo Digital</em></h2>
+    
+    <div class="pipe-grid" data-aos="fade-up">
+        <div class="pipe-step">
+            <div class="pipe-n">01</div>
+            <div class="pipe-t">Ingesta</div>
+            <p class="pipe-d">Briefing inteligente alineado con los objetivos de posicionamiento estético global de la marca.</p>
+        </div>
+        <div class="pipe-step">
+            <div class="pipe-n">02</div>
+            <div class="pipe-t">Dirección</div>
+            <p class="pipe-d">Estructuración de ideas, copys de marca, diseño de flyers e historias dinámicas.</p>
+        </div>
+        <div class="pipe-step">
+            <div class="pipe-n">03</div>
+            <div class="pipe-t">Producción</div>
+            <p class="pipe-d">Rodaje cinematográfico fotorrealista y despliegue de flujos técnicos de VFX.</p>
+        </div>
+        <div class="pipe-step">
+            <div class="pipe-n">04</div>
+            <div class="pipe-t">Ecosistema</div>
+            <p class="pipe-d">Entrega unificada del reporte final y los activos organizados de forma impecable por carpetas modulares.</p>
+        </div>
+        <div class="pipe-step">
+            <div class="pipe-n">05</div>
+            <div class="pipe-t">Métricas</div>
+            <p class="pipe-d">Análisis mensual de conversión publicitaria y optimización constante del rendimiento de la marca.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<hr class="div-line">
+
+<section class="sec" id="hub">
+<div class="wrap">
+    <div class="sec-eye" data-aos="fade-right">Visión de Autor</div>
+    <h2 class="sec-h" data-aos="fade-up">Especialistas Detrás de<br><em>Tu Identidad Audiovisual</em></h2>
+    
+    <div class="team-grid">
+        <div class="team-card" data-aos="fade-up">
+            <div class="team-role">Director Creativo & VFX</div>
+            <div class="team-name">Juan David Castro</div>
+            <p class="team-desc">Dirección de arte premium, diseño de workflows de post-producción cinematográfica hiperrealista y control estratégico del rendimiento visual global de Kaizen Leap.</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-role">Editor de Contenido Senior</div>
+            <div class="team-name">Producción Visual</div>
+            <p class="team-desc">Especialista en narrativa audiovisual, corrección de color cinemática y optimización omnicanal de activos con entregas eficientes en 3 días hábiles.</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-role">AI Spokesperson Specialist</div>
+            <div class="team-name">Cara de tu Marca</div>
+            <p class="team-desc">Evolución técnica en cámara a través del modelado de gemelos digitales y avatares corporativos hechos a la medida para expansión global omnicanal.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<hr class="div-line">
+
+<section class="sec brief-sec" id="briefing">
+<div class="wrap">
+    <div class="sec-eye" data-aos="fade-right" style="justify-content:center;">Portal de Calificación Corporativa</div>
+    <h2 class="sec-h" data-aos="fade-up">Inicia la Construcción de<br><em>Tu Autoridad Visual</em></h2>
+    <p data-aos="fade-up" data-aos-delay="100">Selecciona el módulo estratégico prioritario para iniciar el proceso de ingesta técnica de Kaizen Leap.</p>
+    
+    <form class="brief-form" id="ingestaForm" data-aos="fade-up" data-aos-delay="200">
+        <div class="brief-pills">
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="vfx" class="pill-in" checked><span class="pill-btn">Cine Comercial & VFX</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="omnicanal" class="pill-in"><span class="pill-btn">Ecosistema Omnicanal</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="photo" class="pill-in"><span class="pill-btn">Fotografía High-End</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="twin" class="pill-in"><span class="pill-btn">Digital Twin / AI Avatar</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="roi" class="pill-in"><span class="pill-btn">Aceleración Ads & ROI</span></label>
+        </div>
+        <div class="cta-row">
+            <a href="https://wa.me/573181066522?text=%C2%A1Hola%2C%20equipo%20de%20Kaizen%20Leap!%20Estuve%20revisando%20su%20p%C3%A1gina%20y%20me%20interesa%20trabajar%20con%20ustedes.%20Me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20marketing%2C%20contenido%20y%20producci%C3%B3n%20visual.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F" class="btn-gold">Consultoría Inmediata (WhatsApp)</a>
+            <button type="submit" class="btn-ghost">Enviar Formulación de Briefing</button>
+        </div>
+    </form>
+</div>
+</section>
+
+<footer>
+    <div class="wrap">
+        <img src="icons/Kaizen PNG.png" alt="Logotipo Institucional Kaizen Leap" class="footer-logo">
+        <p><strong>Kaizen Leap</strong> · Hub Audiovisual Global enfocado en el Rendimiento Estético · 2026</p>
+        <p style="margin-top:4px;font-size:9px;letter-spacing:3px;opacity:.4;">Mejora Continua · Cine Comercial · VFX Workflows · Resultados Reales</p>
+    </div>
+</footer>
+
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/fancybox.umd.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // ══ HERO VIDEO AUDIO TOGGLE ══
+        const heroVideo = document.getElementById('hero-video');
+        const audioToggle = document.getElementById('audio-toggle');
+        if (heroVideo && audioToggle) {
+            const audioIcon = audioToggle.querySelector('i');
+            heroVideo.muted = true;
+            const forcePlay = () => heroVideo.play().catch(() => {});
+            forcePlay();
+            document.addEventListener('click',  () => heroVideo.play().catch(()=>{}), { once: true });
+            document.addEventListener('scroll', () => heroVideo.play().catch(()=>{}), { once: true });
+            audioToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                heroVideo.muted = !heroVideo.muted;
+                audioIcon.className = heroVideo.muted ? 'bi bi-volume-mute' : 'bi bi-volume-up';
+                audioToggle.setAttribute('title', heroVideo.muted ? 'Activar Audio' : 'Silenciar Audio');
+            });
+        }
+
+        // ══════════════════════════════════════════════════════════
+        //  LIGHTBOX CINEMATOGRÁFICO — KAIZEN LEAP CINEMA ENGINE
+        //  Click en cualquier tarjeta → overlay fullscreen premium
+        // ══════════════════════════════════════════════════════════
+
+        // Inyectar el lightbox DOM una sola vez
+        const lb = document.createElement('div');
+        lb.id = 'kl-lightbox';
+        lb.innerHTML = `
+            <div id="kl-lb-backdrop"></div>
+            <div id="kl-lb-panel">
+                <div id="kl-lb-header">
+                    <div id="kl-lb-meta">
+                        <span id="kl-lb-tag"></span>
+                        <span id="kl-lb-title"></span>
+                    </div>
+                    <div id="kl-lb-controls">
+                        <button id="kl-lb-close" title="Cerrar"><i class="bi bi-x-lg"></i></button>
+                    </div>
+                </div>
+                <div id="kl-lb-stage">
+                    <div id="kl-lb-loader">
+                        <img src="icons/Logo PNG.png" alt="Kaizen Leap" id="kl-lb-logo">
+                        <div id="kl-lb-bar"><div id="kl-lb-bar-inner"></div></div>
+                        <span id="kl-lb-loader-text">Cargando producción…</span>
+                    </div>
+                    <iframe id="kl-lb-iframe" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div id="kl-lb-footer">
+                    <span id="kl-lb-brand">✦ KAIZEN LEAP · PRODUCCIÓN VISUAL · 2026</span>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(lb);
+
+        // Estilos del lightbox inyectados
+        const lbStyle = document.createElement('style');
+        lbStyle.textContent = `
+            /* ── LIGHTBOX WRAPPER ── */
+            #kl-lightbox {
+                position: fixed; inset: 0; z-index: 99999;
+                display: flex; align-items: center; justify-content: center;
+                opacity: 0; pointer-events: none;
+                transition: opacity .35s cubic-bezier(.16,1,.3,1);
+            }
+            #kl-lightbox.open {
+                opacity: 1; pointer-events: all;
+            }
+
+            /* Fondo oscuro con blur */
+            #kl-lb-backdrop {
+                position: absolute; inset: 0;
+                background: rgba(4,2,0,0.96);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                cursor: pointer;
+            }
+            /* Líneas decorativas sobre el backdrop */
+            #kl-lb-backdrop::before {
+                content: '';
+                position: absolute; inset: 0;
+                background-image:
+                    linear-gradient(rgba(212,168,67,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(212,168,67,0.03) 1px, transparent 1px);
+                background-size: 60px 60px;
+            }
+            /* Bokeh ambiental en el backdrop */
+            #kl-lb-backdrop::after {
+                content: '';
+                position: absolute;
+                width: 600px; height: 600px;
+                background: radial-gradient(circle, rgba(212,168,67,0.07) 0%, transparent 65%);
+                top: -100px; left: 50%; transform: translateX(-50%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+
+            /* ── PANEL PRINCIPAL ── */
+            #kl-lb-panel {
+                position: relative; z-index: 2;
+                width: min(92vw, 1100px);
+                max-height: 92vh;
+                display: flex; flex-direction: column;
+                background: #080400;
+                border: 1px solid rgba(212,168,67,0.18);
+                box-shadow:
+                    0 0 0 1px rgba(212,168,67,0.06),
+                    0 40px 120px rgba(0,0,0,0.9),
+                    0 0 60px rgba(212,168,67,0.08);
+                transform: scale(0.93) translateY(20px);
+                transition: transform .4s cubic-bezier(.16,1,.3,1);
+                overflow: hidden;
+            }
+            #kl-lightbox.open #kl-lb-panel {
+                transform: scale(1) translateY(0);
+            }
+
+            /* ── HEADER ── */
+            #kl-lb-header {
+                display: flex; align-items: center; justify-content: space-between;
+                padding: 16px 24px;
+                border-bottom: 1px solid rgba(212,168,67,0.1);
+                background: rgba(12,7,2,0.8);
+                flex-shrink: 0;
+            }
+            #kl-lb-meta { display: flex; flex-direction: column; gap: 3px; }
+            #kl-lb-tag {
+                font-size: 8px; font-weight: 700; letter-spacing: 3.5px;
+                text-transform: uppercase; color: var(--g1);
+            }
+            #kl-lb-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 18px; font-weight: 700; color: var(--white);
+            }
+            #kl-lb-controls { display: flex; gap: 10px; align-items: center; }
+            #kl-lb-close {
+                width: 40px; height: 40px; border-radius: 50%;
+                background: rgba(212,168,67,0.06);
+                border: 1px solid rgba(212,168,67,0.2);
+                color: var(--g2); font-size: 16px; cursor: pointer;
+                display: flex; align-items: center; justify-content: center;
+                transition: all .3s cubic-bezier(.16,1,.3,1);
+            }
+            #kl-lb-close:hover {
+                background: rgba(212,168,67,0.15);
+                border-color: var(--g1); color: var(--white);
+                transform: rotate(90deg);
+            }
+
+            /* ── STAGE — área del video ── */
+            #kl-lb-stage {
+                position: relative;
+                width: 100%;
+                padding-top: 56.25%; /* 16:9 */
+                background: #030100;
+                flex-shrink: 0;
+            }
+            #kl-lb-stage.vertical { padding-top: 177.78%; } /* 9:16 reels */
+
+            /* LOADER cinematográfico */
+            #kl-lb-loader {
+                position: absolute; inset: 0; z-index: 5;
+                display: flex; flex-direction: column;
+                align-items: center; justify-content: center; gap: 20px;
+                background: #030100;
+                transition: opacity .5s ease;
+            }
+            #kl-lb-loader.hidden { opacity: 0; pointer-events: none; }
+            #kl-lb-logo {
+                height: 55px; width: auto;
+                filter: drop-shadow(0 0 20px rgba(212,168,67,0.5));
+                animation: logoPulse 3s ease-in-out infinite alternate;
+            }
+            #kl-lb-bar {
+                width: 160px; height: 2px;
+                background: rgba(212,168,67,0.12);
+                border-radius: 2px; overflow: hidden;
+            }
+            #kl-lb-bar-inner {
+                height: 100%;
+                background: linear-gradient(to right, var(--g3), var(--g2), var(--g1));
+                width: 0%;
+                animation: loadBar 2.5s cubic-bezier(.4,0,.2,1) forwards;
+                border-radius: 2px;
+            }
+            @keyframes loadBar { 0%{width:0%} 60%{width:75%} 85%{width:88%} 100%{width:96%} }
+            #kl-lb-loader-text {
+                font-size: 9px; font-weight: 700; letter-spacing: 4px;
+                text-transform: uppercase; color: rgba(212,168,67,0.4);
+            }
+
+            /* IFRAME */
+            #kl-lb-iframe {
+                position: absolute; inset: 0; width: 100%; height: 100%;
+                border: none; z-index: 4;
+                opacity: 0; transition: opacity .6s ease .8s;
+            }
+            #kl-lightbox.ready #kl-lb-iframe { opacity: 1; }
+
+            /* ── FOOTER ── */
+            #kl-lb-footer {
+                padding: 10px 24px;
+                border-top: 1px solid rgba(212,168,67,0.08);
+                background: rgba(8,4,0,0.9);
+                flex-shrink: 0;
+            }
+            #kl-lb-brand {
+                font-size: 8px; font-weight: 700; letter-spacing: 4px;
+                text-transform: uppercase; color: rgba(212,168,67,0.25);
+            }
+
+            /* ── HOVER EFFECT EN CARDS ── */
+            .port-media .play-ring {
+                position: absolute; inset: 0; z-index: 3;
+                display: flex; align-items: center; justify-content: center;
+                background: rgba(4,2,0,0);
+                transition: background .35s ease;
+                cursor: pointer;
+            }
+            .port-media:hover .play-ring { background: rgba(4,2,0,0.25); }
+            .showreel-frame .play-ring {
+                position: absolute; inset: 0; z-index: 3;
+                display: flex; align-items: center; justify-content: center;
+                cursor: pointer;
+            }
+
+            /* ── KEY ESC label ── */
+            #kl-lb-esc {
+                position: absolute; bottom: 14px; right: 24px; z-index: 10;
+                font-size: 8px; font-weight: 700; letter-spacing: 2px;
+                color: rgba(212,168,67,0.2); text-transform: uppercase;
+                pointer-events: none;
+            }
+
+            /* ── RESPONSIVE ── */
+            @media(max-width:768px){
+                #kl-lb-panel { width: 98vw; }
+                #kl-lb-title { font-size: 14px; }
+                #kl-lb-stage.vertical { padding-top: 140%; }
+            }
+        `;
+        document.head.appendChild(lbStyle);
+
+        // Referencias del lightbox
+        const lbEl      = document.getElementById('kl-lightbox');
+        const lbIframe  = document.getElementById('kl-lb-iframe');
+        const lbLoader  = document.getElementById('kl-lb-loader');
+        const lbBarIn   = document.getElementById('kl-lb-bar-inner');
+        const lbStage   = document.getElementById('kl-lb-stage');
+        const lbTag     = document.getElementById('kl-lb-tag');
+        const lbTitle   = document.getElementById('kl-lb-title');
+        const lbClose   = document.getElementById('kl-lb-close');
+        const lbBack    = document.getElementById('kl-lb-backdrop');
+
+        let lbOpen = false;
+        let loaderTimer = null;
+
+        function openLightbox(videoId, tag, title, isReel) {
+            if (lbOpen) closeLightbox();
+            lbOpen = true;
+
+            // Metadata
+            lbTag.textContent   = tag   || '';
+            lbTitle.textContent = title || 'Producción Kaizen Leap';
+
+            // Stage ratio
+            lbStage.className = isReel ? 'vertical' : '';
+
+            // Resetear loader
+            lbLoader.classList.remove('hidden');
+            lbEl.classList.remove('ready');
+            lbBarIn.style.animation = 'none';
+            void lbBarIn.offsetWidth; // reflow
+            lbBarIn.style.animation = '';
+            lbIframe.src = '';
+
+            // Mostrar lightbox
+            lbEl.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            // Cargar iframe después de un beat para que se vea el loader
+            setTimeout(() => {
+                lbIframe.src = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
+                // Cuando cargue el iframe, ocultar loader
+                lbIframe.onload = () => {
+                    setTimeout(() => {
+                        lbLoader.classList.add('hidden');
+                        lbEl.classList.add('ready');
+                    }, 600);
+                };
+                // Fallback: ocultar loader después de 4s pase lo que pase
+                loaderTimer = setTimeout(() => {
+                    lbLoader.classList.add('hidden');
+                    lbEl.classList.add('ready');
+                }, 4000);
+            }, 350);
+        }
+
+        function closeLightbox() {
+            lbOpen = false;
+            lbEl.classList.remove('open', 'ready');
+            document.body.style.overflow = '';
+            clearTimeout(loaderTimer);
+            setTimeout(() => { lbIframe.src = ''; }, 400);
+        }
+
+        // Eventos de cierre
+        lbClose.addEventListener('click', closeLightbox);
+        lbBack.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && lbOpen) closeLightbox(); });
+
+        // ══════════════════════════════════════════════════════════
+        //  SISTEMA DE PREVIEW EN MINIATURA — HOVER TO PLAY
+        //  Al pasar el cursor (o tocar en móvil) sobre el card,
+        //  se carga el iframe de Drive silenciado. Click = lightbox.
+        // ══════════════════════════════════════════════════════════
+
+        let activePreviewContainer = null;
+        let activePreviewIframe    = null;
+        let activePreviewTimer     = null;
+        let leaveTimer             = null;
+
+        function deactivateCurrentPreview() {
+            clearTimeout(activePreviewTimer);
+            if (!activePreviewContainer) return;
+            activePreviewContainer.classList.remove('preview-active');
+            if (activePreviewIframe) {
+                activePreviewIframe.style.opacity = '0';
+                const toRemove = activePreviewIframe;
+                // Destruir el iframe para detener la reproducción
+                setTimeout(() => { if (toRemove.parentNode) toRemove.parentNode.removeChild(toRemove); }, 500);
+            }
+            activePreviewContainer = null;
+            activePreviewIframe    = null;
+        }
+
+        function activatePreview(container, videoId) {
+            if (activePreviewContainer === container) return;
+            deactivateCurrentPreview();
+
+            const iframe = document.createElement('iframe');
+            iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;z-index:2;opacity:0;transition:opacity .5s ease;pointer-events:none;';
+            iframe.allow = 'autoplay; encrypted-media';
+            // Drive acepta autoplay cuando hay interacción del usuario (hover)
+            // No hay parámetro mute oficial pero el player de Drive arranca muted por defecto en preview
+            iframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
+            container.appendChild(iframe);
+
+            activePreviewContainer = container;
+            activePreviewIframe    = iframe;
+
+            // Mostrar iframe tras breve carga
+            activePreviewTimer = setTimeout(() => {
+                if (activePreviewIframe !== iframe) return;
+                iframe.style.opacity = '1';
+                container.classList.add('preview-active');
+            }, 600);
+        }
+
+        // Vincular cada .click-to-play
+        document.querySelectorAll('.click-to-play').forEach(container => {
+            const videoId = container.getAttribute('data-video-id');
+            if (!videoId) return;
+
+            const card    = container.closest('.port-card');
+            const tagEl   = card ? card.querySelector('.port-tag') : null;
+            const titleEl = card ? card.querySelector('h4') : null;
+            const isReel  = container.classList.contains('port-media--reel');
+
+            container.style.cursor = 'pointer';
+
+            // Ring de hover
+            if (!container.querySelector('.play-ring')) {
+                const ring = document.createElement('div');
+                ring.className = 'play-ring';
+                container.appendChild(ring);
+            }
+
+            // Barra inferior del preview
+            const bar = document.createElement('div');
+            bar.className = 'preview-bar';
+            bar.innerHTML = `
+                <span class="preview-label">Vista previa</span>
+                <span class="preview-sound-hint"><i class="bi bi-volume-mute-fill"></i></span>
+            `;
+            container.appendChild(bar);
+
+            // Hint expand
+            const hint = document.createElement('div');
+            hint.className = 'preview-expand-hint';
+            hint.innerHTML = '<i class="bi bi-fullscreen"></i>';
+            container.appendChild(hint);
+
+            // ── HOVER: activar preview al entrar ──
+            container.addEventListener('mouseenter', () => {
+                clearTimeout(leaveTimer);
+                activatePreview(container, videoId);
+            });
+
+            // ── HOVER: desactivar al salir (con pequeño delay para evitar flicker) ──
+            container.addEventListener('mouseleave', () => {
+                leaveTimer = setTimeout(deactivateCurrentPreview, 300);
+            });
+
+            // ── TOUCH (móvil): primer toque activa preview, segundo toque abre lightbox ──
+            let touchActivated = false;
+            container.addEventListener('touchstart', (e) => {
+                if (!touchActivated) {
+                    e.preventDefault();
+                    touchActivated = true;
+                    activatePreview(container, videoId);
+                    // Reset si toca otro card
+                    setTimeout(() => { touchActivated = false; }, 3000);
+                    return;
+                }
+                touchActivated = false;
+            }, { passive: false });
+
+            // ── CLICK: abrir lightbox ──
+            container.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openLightbox(
+                    videoId,
+                    tagEl   ? tagEl.textContent.trim()   : 'Kaizen Leap · Producción',
+                    titleEl ? titleEl.textContent.trim() : 'Showreel Oficial',
+                    isReel
+                );
+            });
+        });
+
+        // Showreel también
+        document.querySelectorAll('.showreel-frame.click-to-play').forEach(container => {
+            container.style.cursor = 'pointer';
+        });
+
+        // ══ FILTROS DE PORTAFOLIO ══
+        const filters = document.querySelectorAll('.port-filter');
+        const cards   = document.querySelectorAll('.port-card');
+        filters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filters.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const cat = btn.dataset.filter;
+                cards.forEach(card => {
+                    card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+                });
+            });
+        });
+
+        // ══ AOS INIT ══
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic' });
+        }
+
+        // ══ HERO COUNTERS ══
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'));
+            if (!target || isNaN(target)) return;
+            const suffix = el.getAttribute('data-suffix') || (el.getAttribute('data-target') === '100' ? '%' : '+');
+            const dur = 1800, t0 = performance.now();
+            const tick = (now) => {
+                const p = Math.min((now - t0) / dur, 1);
+                const ease = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.floor(ease * target) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        }
+        const counterObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.hc-n[data-target]').forEach(animateCounter);
+                    counterObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        const countersEl = document.querySelector('.hero-counters');
+        if (countersEl) counterObs.observe(countersEl);
+
+        // ══ WHATSAPP BRIEFING FORM ══
+        const ingestaForm = document.getElementById('ingestaForm');
+        if (ingestaForm) {
+            ingestaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const sel = this.querySelector('input[name="ingesta"]:checked');
+                if (sel) {
+                    const moduleText = sel.nextElementSibling.textContent.trim();
+                    const msg = `¡Hola, equipo de Kaizen Leap! Estuve revisando su portafolio y me gustaría explorar una colaboración. Estoy interesado/a en el área de: *${moduleText}*. ¿Podríamos agendar una llamada o conversar por aquí para ver cómo trabajan y qué propuesta pueden armar para mi marca?`;
+                    window.open(`https://wa.me/573181066522?text=${encodeURIComponent(msg)}`, '_blank');
+                }
+            });
+        }
+    });
+</script>
+
+
+<script>
+/* ══ MOTOR DE PARTÍCULAS DORADAS — HERO CINEMATIC ENGINE ══ */
+(function() {
+    const canvas = document.getElementById('hero-particles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+
+    const GOLD = [
+        'rgba(212,168,67,',
+        'rgba(240,201,106,',
+        'rgba(168,114,40,',
+        'rgba(255,220,120,',
+    ];
+
+    function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+    }
+
+    function Particle() {
+        this.reset = function() {
+            this.x = Math.random() * W;
+            this.y = Math.random() * H;
+            this.r = Math.random() * 1.8 + 0.4;
+            this.speed = Math.random() * 0.35 + 0.08;
+            this.drift = (Math.random() - 0.5) * 0.25;
+            this.alpha = Math.random() * 0.45 + 0.08;
+            this.alphaDir = (Math.random() - 0.5) * 0.003;
+            this.color = GOLD[Math.floor(Math.random() * GOLD.length)];
+            this.twinkle = Math.random() > 0.6;
+        };
+        this.reset();
+        this.y = Math.random() * H; // distribute initially
+
+        this.update = function() {
+            this.y -= this.speed;
+            this.x += this.drift;
+            if (this.twinkle) {
+                this.alpha += this.alphaDir;
+                if (this.alpha > 0.55 || this.alpha < 0.05) this.alphaDir *= -1;
+            }
+            if (this.y < -5 || this.x < -10 || this.x > W + 10) this.reset(), this.y = H + 5;
+        };
+
+        this.draw = function() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+            ctx.fillStyle = this.color + this.alpha + ')';
+            ctx.fill();
+        };
+    }
+
+    function init() {
+        resize();
+        particles = [];
+        const count = Math.floor((W * H) / 9000);
+        for (let i = 0; i < Math.min(count, 140); i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function loop() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(loop);
+    }
+
+    window.addEventListener('resize', () => { resize(); });
+    init();
+    loop();
+})();
+</script>
+
+</body>
+</html>
