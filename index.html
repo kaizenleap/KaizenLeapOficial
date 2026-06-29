@@ -3,12 +3,88 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Kaizen Leap — Marketing Digital · Ingeniería Visual Global · VFX · Cine Comercial · 2026</title>
+
+    <!-- ══ SEO PRIMARIO ══ -->
+    <title>Kaizen Leap — Agencia de Marketing Digital en Cundinamarca & Bogotá | Contenido que Vende</title>
+    <meta name="description" content="Agencia de marketing digital en Cundinamarca y Bogotá. Gestión de redes sociales, pauta en Meta & Google Ads, producción de video y branding para empresas y negocios en Funza, Mosquera, Madrid, Chía y Bogotá. Resultados reales, no solo likes.">
+    <meta name="keywords" content="agencia de marketing digital Cundinamarca, marketing digital Funza, marketing digital Mosquera, redes sociales para empresas, pauta Meta Ads Colombia, producción de contenido Bogotá, branding Cundinamarca, agencia publicidad Bogotá, Kaizen Leap">
+    <meta name="author" content="Kaizen Leap">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#060300">
+    <link rel="canonical" href="https://kaizenleap.github.io/">
+
+    <!-- ══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ══ -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kaizen Leap">
+    <meta property="og:title" content="Kaizen Leap — Tu Marca Vende o Solo Existe">
+    <meta property="og:description" content="Agencia de marketing digital en Cundinamarca & Bogotá. Redes sociales, pauta, producción visual y branding para negocios que quieren crecer de verdad.">
+    <meta property="og:url" content="https://kaizenleap.github.io/">
+    <meta property="og:image" content="https://kaizenleap.github.io/icons/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kaizen Leap — Agencia de Marketing Digital Cundinamarca">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- ══ TWITTER / X CARD ══ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kaizen Leap — Tu Marca Vende o Solo Existe">
+    <meta name="twitter:description" content="Marketing digital, contenido visual y pauta para negocios en Cundinamarca y Bogotá. Resultados reales.">
+    <meta name="twitter:image" content="https://kaizenleap.github.io/icons/og-cover.jpg">
+
+    <!-- ══ FAVICON ══ -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="manifest" href="icons/site.webmanifest">
+
+    <!-- ══ DATOS ESTRUCTURADOS — LocalBusiness (Google) ══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Kaizen Leap",
+      "description": "Agencia de marketing digital, producción de contenido visual, pauta en Meta & Google Ads y branding para empresas en Cundinamarca y Bogotá.",
+      "url": "https://kaizenleap.github.io/",
+      "logo": "https://kaizenleap.github.io/icons/Kaizen PNG.png",
+      "image": "https://kaizenleap.github.io/icons/og-cover.jpg",
+      "telephone": "+573181066522",
+      "email": "contacto@kaizenleap.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "COP",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Cundinamarca",
+        "addressCountry": "CO",
+        "addressLocality": "Funza"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Funza" },
+        { "@type": "City", "name": "Mosquera" },
+        { "@type": "City", "name": "Madrid" },
+        { "@type": "City", "name": "Chía" },
+        { "@type": "City", "name": "Bogotá" }
+      ],
+      "serviceType": [
+        "Marketing Digital",
+        "Gestión de Redes Sociales",
+        "Pauta en Meta Ads",
+        "Pauta en Google Ads",
+        "Producción de Contenido Visual",
+        "Branding y Diseño Gráfico"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/kaizenleap",
+        "https://www.tiktok.com/@kaizenleap"
+      ]
+    }
+    </script>
     
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/fancybox.css">
     <link rel="stylesheet" href="assets/css/aos.css">
     <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     
     <style>
@@ -35,7 +111,10 @@
             background-size: 220px 220px;
             opacity: 0.45;
             mix-blend-mode: overlay;
+            will-change: auto;
+            transform: translateZ(0);
         }
+        @media (max-width: 768px) { body::after { display: none; } }
 
         h1, h2, h3, h4 { font-family: var(--font-head); color: var(--white); }
         p { font-size: 16px; font-weight: 300; line-height: 1.95; color: rgba(242,232,208,.8); }
@@ -51,6 +130,7 @@
         .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 18px 55px rgba(212,168,67,.4); color: var(--ink); }
         .btn-ghost { background: transparent; color: var(--g2); font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; padding: 17px 46px; border: 1px solid rgba(212,168,67,.25); transition: all .35s cubic-bezier(.16,1,.3,1); text-decoration: none; display: inline-block; }
         .btn-ghost:hover { border-color: var(--g1); background: rgba(212,168,67,.05); transform: translateY(-3px); color: var(--g2); }
+        .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 
         /* NAVEGACIÓN CORPORATIVA */
         header { position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; padding: 20px 24px; background: linear-gradient(to bottom, rgba(6,3,0,0.92), rgba(6,3,0,0.0)); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(212,168,67,0.06); }
@@ -580,6 +660,8 @@
         .eco-card h4 { font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
         .eco-card p { font-size: 14px; color: var(--muted); line-height: 1.9; margin-bottom: 0; }
         .eco-featured { grid-column: span 2; background: linear-gradient(150deg, rgba(212,168,67,.05), var(--card)); }
+        .eco-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+        .eco-tag-pill { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--g1); background: rgba(212,168,67,0.07); border: 1px solid rgba(212,168,67,0.18); padding: 5px 14px; }
 
         /* CONTROL Y TRANSPARENCIA DE PROCESOS (PIPELINE) */
         .pipe-grid { display: grid; grid-template-columns: repeat(5, 1fr); max-width: 1200px; margin: 60px auto 0; gap: 16px; width: 100%; }
@@ -609,50 +691,609 @@
 
         /* FOOTER */
         footer { border-top: 1px solid rgba(212,168,67,.08); padding: 80px 24px; text-align: center; background: #050200; }
+
+        /* SECCIÓN RESULTADOS / POR QUÉ ELEGIRNOS */
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 60px; width: 100%; }
+        .result-card { background: var(--card); padding: 44px 36px; border-top: 1px solid rgba(212,168,67,.06); transition: all 0.4s ease; box-sizing: border-box; position: relative; overflow: hidden; }
+        .result-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, rgba(212,168,67,0), transparent); transition: background .4s ease; }
+        .result-card:hover::after { background: linear-gradient(to right, transparent, rgba(212,168,67,0.4), transparent); }
+        .result-card:hover { transform: translateY(-5px); box-shadow: 0 20px 55px rgba(0,0,0,.5); border-top-color: var(--g1); }
+        .result-icon { font-size: 30px; color: var(--g2); margin-bottom: 22px; display: block; opacity: 0.85; }
+        .result-card h4 { font-family: var(--font-head); font-size: 19px; color: var(--white); margin-bottom: 12px; font-weight: 700; line-height: 1.3; }
+        .result-card p { font-size: 13.5px; color: var(--muted); line-height: 1.85; margin: 0; }
+
+        /* SOCIAL PROOF MINI */
+        .social-proof { margin-top: 40px; }
+        .sp-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+        .sp-item { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; color: rgba(212,168,67,0.55); text-transform: uppercase; }
+        .sp-item i { font-size: 14px; color: var(--g1); }
         .footer-logo { height: 55px; width: auto; object-fit: contain; margin-bottom: 22px; filter: drop-shadow(0 0 8px rgba(212,168,67,0.2)); opacity: 0.7; }
         footer p { font-size: 11px; color: rgba(212,168,67,.3); letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; }
         footer strong { color: rgba(212,168,67,.45); }
         
-        /* RESPONSIVIDAD TOTAL ABSOLUTA */
+        /* ══════════════════════════════════════════════
+           RESPONSIVE SYSTEM — FULL DEVICE COVERAGE
+           TV · Desktop · Laptop · Tablet · Mobile
+        ══════════════════════════════════════════════ */
+
+        /* ── HAMBURGER MENU (oculto en desktop) ── */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 10001;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--g2);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── TV / PANTALLAS GRANDES (1440px+) ── */
+        @media screen and (min-width: 1440px) {
+            .wrap { max-width: 1360px; padding: 0 48px; }
+            .hero-h1 { font-size: clamp(80px, 7vw, 120px); }
+            .sec { padding: 160px 0; }
+            .eco-card { padding: 64px 54px; }
+            .stat-n { font-size: 62px; }
+        }
+
+        /* ── LAPTOP / DESKTOP ESTÁNDAR (1025–1439px) ── */
+        @media screen and (max-width: 1280px) {
+            .eco-card { padding: 44px 34px; }
+            .pipe-grid { gap: 12px; }
+        }
+
+        /* ── TABLET LANDSCAPE + LAPTOP PEQUEÑO (1025px) ── */
         @media screen and (max-width: 1024px) {
             .eco-grid, .team-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
             .eco-featured { grid-column: span 2; }
-            .pipe-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+            .pipe-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .main-nav ul { gap: 24px; }
+            .main-nav a { letter-spacing: 2.5px; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        
-        @media screen and (max-width: 768px) {
+
+        /* ── TABLET PORTRAIT (768–1024px) ── */
+        @media screen and (max-width: 900px) {
             .sec { padding: 100px 0; }
-            header { padding: 16px; position: absolute; backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--ink); }
-            .header-inner { flex-direction: column; gap: 16px; }
-            .main-nav ul { gap: 20px; flex-wrap: wrap; justify-content: center; }
-            .eco-grid, .team-grid, .pipe-grid { grid-template-columns: 1fr; gap: 4px; width: 100%; }
-            .eco-featured { grid-column: span 1; }
-            .eco-card, .team-card { padding: 44px 24px; }
-            .stats-inner { grid-template-columns: repeat(2, 1fr); }
-            .stat { padding: 36px 12px; border-bottom: 1px solid rgba(212,168,67,.06); }
-            .stat:nth-child(2) { border-right: none; }
-            .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
-            .stat:nth-child(3) { border-right: 1px solid rgba(212,168,67,.06); }
-            .stat-n { font-size: 44px; }
-            .cta-row { flex-direction: column; width: 100%; max-width: 360px; margin: 0 auto; gap: 12px; }
-            .btn-gold, .btn-ghost { width: 100%; text-align: center; box-sizing: border-box; }
-            .hero-h1 { font-size: clamp(38px, 9vw, 65px); }
-            .vfx-content { padding: 24px; }
-            .vfx-content h4 { font-size: 18px; }
-            .mute-btn { bottom: 20px; right: 20px; width: 42px; height: 42px; font-size: 16px; }
-            .hero-center-logo { height: 75px; }
-            #hero-particles { width: 100%; height: 100%; }
-            .hero-sideline, .hero-sideline-r { display: none; }
-            .hero-counters { flex-wrap: wrap; }
-            .hero-counter { min-width: 50%; border-bottom: 1px solid rgba(212,168,67,0.08); }
-            .hero-scroll { display: none; }
-            .hc-n { font-size: 26px; }
             .port-grid { grid-template-columns: 1fr; }
             .port-card--wide { grid-column: span 1; }
             .port-gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .port-gallery-grid img { height: 180px; }
-            .port-filters { gap: 8px; }
-            .showreel-wrap { margin-bottom: 48px; }
+            .port-gallery-grid img { height: 200px; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat { padding: 40px 16px; border-bottom: 1px solid rgba(212,168,67,.06); }
+            .stat:nth-child(2) { border-right: none; }
+            .stat:nth-child(3) { border-right: 1px solid rgba(212,168,67,.06); border-bottom: none; }
+            .stat:nth-child(4) { border-bottom: none; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+            .eco-grid { grid-template-columns: 1fr; }
+            .eco-featured { grid-column: span 1; }
+        }
+
+        /* ── MÓVIL Y TABLET (hasta 768px) ── */
+        @media screen and (max-width: 768px) {
+            /* Header y nav */
+            header {
+                padding: 14px 16px;
+                background: rgba(6,3,0,0.97);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+            }
+            .header-inner { flex-direction: row; gap: 0; justify-content: space-between; align-items: center; }
+            .nav-toggle { display: flex; }
+            .main-nav {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(6,3,0,0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9998;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.35s ease;
+            }
+            .main-nav.open {
+                opacity: 1;
+                pointer-events: all;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                gap: 28px;
+                text-align: center;
+                list-style: none;
+                margin: 0; padding: 0;
+                align-items: center;
+            }
+            .main-nav a {
+                font-size: 13px;
+                letter-spacing: 4px;
+                color: var(--cream);
+            }
+            .main-nav a:hover { color: var(--g2); }
+
+            /* Hero */
+            .hero { padding: 120px 16px 100px; }
+            .hero-h1 { font-size: clamp(34px, 10vw, 56px); letter-spacing: -1px; }
+            .hero-h1-wrap::before, .hero-h1-wrap::after { display: none; }
+            .hero-center-logo { height: 70px; }
+            .hero-p { font-size: 15px; padding: 0 4px; }
+            .hero-sideline, .hero-sideline-r { display: none; }
+            .hero-scroll { display: none; }
+            .mute-btn { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 15px; }
+            .eyebrow { font-size: 8px; letter-spacing: 4px; }
+
+            /* Counters */
+            .hero-counters { flex-wrap: wrap; max-width: 100%; }
+            .hero-counter { min-width: 50%; border-bottom: 1px solid rgba(212,168,67,0.08); flex: none; width: 50%; box-sizing: border-box; }
+            .hero-counter:nth-child(2) { border-right: none; }
+            .hc-n { font-size: 26px; }
+            .hc-l { font-size: 7px; }
+
+            /* CTAs */
+            .cta-row { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; gap: 10px; }
+            .btn-gold, .btn-ghost { width: 100%; text-align: center; box-sizing: border-box; padding: 16px 24px; font-size: 10px; letter-spacing: 2px; }
+            .btn-gold { clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px)); }
+
+            /* Secciones */
+            .sec { padding: 80px 0; }
+            .wrap { padding: 0 16px; }
+            .sec-h { font-size: clamp(28px, 8vw, 48px); margin-bottom: 32px; }
+
+            /* Stats */
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat { padding: 32px 12px; border-bottom: 1px solid rgba(212,168,67,.06); }
+            .stat:nth-child(2) { border-right: none; }
+            .stat:nth-child(3) { border-right: 1px solid rgba(212,168,67,.06); border-bottom: none; }
+            .stat:nth-child(4) { border-bottom: none; }
+            .stat-n { font-size: 38px; }
+            .stat-l { font-size: 8px; letter-spacing: 2px; }
+
+            /* Portfolio */
+            .port-grid { grid-template-columns: 1fr; }
+            .port-card--wide { grid-column: span 1; }
+            .port-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .port-gallery-grid img { height: 150px; }
+            .port-filters { gap: 6px; flex-wrap: wrap; }
+            .port-filter { padding: 8px 14px; font-size: 9px; letter-spacing: 1.5px; }
+            .port-info { padding: 22px 20px 24px; }
+            .port-info h4 { font-size: 18px; }
+            .port-info p { font-size: 13px; }
+            .showreel-wrap { margin-bottom: 40px; }
+
+            /* Ecosistema */
+            .eco-grid, .team-grid, .results-grid { grid-template-columns: 1fr; gap: 4px; width: 100%; }
+            .eco-featured { grid-column: span 1; }
+            .eco-card { padding: 38px 22px; }
+            .eco-card h4 { font-size: 20px; }
+            .eco-icon { font-size: 28px; margin-bottom: 20px; }
+            .team-card { padding: 38px 22px; }
+            .team-name { font-size: 20px; }
+
+            /* Pipeline */
+            .pipe-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 12px; }
+            .pipe-n { width: 52px; height: 52px; font-size: 18px; }
+
+            /* VFX */
+            .vfx-content { padding: 20px 18px; }
+            .vfx-content h4 { font-size: 17px; }
+
+            /* Briefing */
+            .brief-pills { gap: 8px; }
+            .pill-btn { padding: 10px 16px; font-size: 9px; letter-spacing: 1.5px; }
+
+            /* Footer */
+            footer { padding: 60px 16px; }
+            .footer-logo { height: 45px; }
+        }
+
+        /* ── MÓVIL PEQUEÑO (hasta 480px) ── */
+        @media screen and (max-width: 480px) {
+            .hero { padding: 100px 14px 80px; }
+            .hero-h1 { font-size: clamp(30px, 11vw, 44px); letter-spacing: -0.5px; }
+            .hero-p { font-size: 14px; }
+            .hero-center-logo { height: 58px; }
+            .hero-badge { padding: 6px 14px; font-size: 8px; }
+            .eyebrow { font-size: 7px; letter-spacing: 3px; gap: 10px; }
+            .eyebrow::before, .eyebrow::after { width: 28px; }
+
+            .hc-n { font-size: 22px; }
+            .hero-counter { padding: 14px 8px; }
+
+            .sec-h { font-size: clamp(24px, 9vw, 38px); }
+            .stat-n { font-size: 32px; }
+
+            .port-gallery-grid { grid-template-columns: 1fr; }
+            .port-gallery-grid img { height: 200px; }
+
+            .pipe-grid { grid-template-columns: 1fr; gap: 20px; }
+
+            .eco-card { padding: 30px 18px; }
+            .team-card { padding: 30px 18px; }
+            .result-card { padding: 30px 18px; }
+
+            .btn-gold, .btn-ghost { padding: 14px 18px; font-size: 9px; letter-spacing: 1.5px; }
+
+            .brief-pills { flex-direction: column; align-items: stretch; }
+            .pill-btn { text-align: center; width: 100%; box-sizing: border-box; }
+
+            .sp-items { flex-direction: column; align-items: center; gap: 14px; }
+            .results-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── MÓVIL MUY PEQUEÑO (hasta 360px – Samsung Galaxy S, iPhone SE) ── */
+        @media screen and (max-width: 360px) {
+            .hero-h1 { font-size: 28px; }
+            .stat-n { font-size: 28px; }
+            .eco-card, .team-card { padding: 26px 14px; }
+            .wrap { padding: 0 12px; }
+            .btn-gold, .btn-ghost { font-size: 8.5px; padding: 13px 14px; }
+        }
+
+        /* ── LANDSCAPE MÓVIL (altura baja) ── */
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            .hero { padding: 90px 24px 60px; min-height: auto; }
+            .hero-center-logo { height: 48px; }
+            .hero-h1 { font-size: clamp(24px, 6vw, 40px); }
+            .hero-p { display: none; }
+            .hero-counters { display: none; }
+            .hero-badge { display: none; }
+        }
+
+        /* ── SAFE AREA para iPhone con notch / Dynamic Island ── */
+        @supports (padding: max(0px)) {
+            header { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+            .wrap { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+            footer { padding-bottom: max(60px, env(safe-area-inset-bottom)); }
+        }
+
+        /* ══ ACCORDION PORTAFOLIO ══ */
+        .portfolio-accordion { width: 100%; }
+        .port-expand-btn {
+            width: 100%;
+            display: flex; align-items: center; gap: 16px;
+            background: rgba(17,10,3,0.6);
+            border: 1px solid rgba(212,168,67,0.18);
+            color: var(--cream);
+            padding: 22px 32px;
+            cursor: pointer;
+            transition: all .35s cubic-bezier(.16,1,.3,1);
+            font-family: var(--font-body);
+            margin-bottom: 0;
+            backdrop-filter: blur(10px);
+        }
+        .port-expand-btn:hover { background: rgba(212,168,67,0.07); border-color: var(--g1); }
+        .port-expand-btn.open { border-bottom-color: transparent; background: rgba(212,168,67,0.06); }
+        .peb-icon { font-size: 22px; color: var(--g2); flex-shrink: 0; }
+        .peb-text { font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--white); flex: 1; text-align: left; }
+        .peb-count { font-size: 10px; font-weight: 600; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; background: rgba(212,168,67,0.08); border: 1px solid rgba(212,168,67,0.15); padding: 4px 14px; }
+        .peb-arrow { font-size: 16px; color: var(--g1); transition: transform .35s ease; flex-shrink: 0; }
+        .port-expand-btn.open .peb-arrow { transform: rotate(180deg); }
+
+        .port-grid-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(.16,1,.3,1);
+        }
+        .port-grid-wrapper.open {
+            max-height: 9999px;
+            transition: max-height 1.2s cubic-bezier(.16,1,.3,1);
+        }
+
+        /* ══ CLIENTES / MARCAS ══ */
+        .clients-sec { text-align: center; }
+        .clients-carousel {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            align-items: center;
+        }
+        .client-bubble { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .client-link { text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .client-avatar {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            border: 2.5px solid #C8102E;
+            overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            transition: all .35s cubic-bezier(.16,1,.3,1);
+            position: relative;
+            z-index: 1;
+        }
+        .client-bubble { position: relative; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        /* ring goes around the bubble, not inside the avatar */
+        .client-tiktok-ring {
+            position: absolute;
+            top: -5px; left: 50%; transform: translateX(-50%);
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(#ff2d55 0%, #010101 30%, #69c9d0 60%, #ff2d55 100%);
+            z-index: 0;
+            animation: tkSpin 4s linear infinite;
+            opacity: 0.65;
+        }
+        .client-link:hover ~ .client-tiktok-ring,
+        .client-bubble:hover .client-tiktok-ring { opacity: 1; }
+        @keyframes tkSpin { to { transform: translateX(-50%) rotate(360deg); } }
+        .client-link:hover .client-avatar {
+            transform: translateY(-4px) scale(1.06);
+        }
+        .client-avatar-img { width: 100%; height: 100%; object-fit: cover; }
+        .client-avatar-fallback {
+            width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .client-avatar-empty {
+            background: rgba(212,168,67,0.04);
+            border: 2px dashed rgba(212,168,67,0.18) !important;
+            font-size: 28px; color: rgba(212,168,67,0.25);
+        }
+        .client-info { text-align: center; position: relative; z-index: 1; }
+        .client-name {
+            font-family: var(--font-head);
+            font-size: 14px; font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: color .3s;
+        }
+        .client-link:hover .client-name { opacity: 0.85; }
+        .client-industry {
+            font-size: 9px; font-weight: 600; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--muted);
+            margin-top: 3px;
+        }
+        .client-coming .client-name { color: rgba(212,168,67,0.25); }
+        .client-coming .client-industry { color: rgba(212,168,67,0.15); }
+
+        @media (max-width: 768px) {
+            .port-expand-btn { padding: 18px 20px; gap: 12px; }
+            .peb-text { font-size: 11px; letter-spacing: 1.5px; }
+            .peb-count { display: none; }
+            .clients-carousel { gap: 24px; }
+            .client-avatar { width: 74px; height: 74px; }
+        }
+
+        /* ══════════════════════════════════════════════
+           NUEVOS ESTILOS — UPGRADE VISUAL MÁXIMO NIVEL
+        ══════════════════════════════════════════════ */
+
+        /* ── SHOWREEL FULLSCREEN ── */
+        .showreel-fullscreen { position: relative; }
+        .showreel-fs-header {
+            display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .showreel-fs-eyebrow {
+            font-size: 9px; font-weight: 700; letter-spacing: 4px;
+            text-transform: uppercase; color: var(--g1);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .sr-dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: var(--fire2);
+            box-shadow: 0 0 8px rgba(232,82,10,0.9);
+            animation: recDot 1.4s ease-in-out infinite alternate;
+            flex-shrink: 0;
+        }
+        .showreel-fs-title {
+            font-family: var(--font-head); font-size: clamp(22px,3vw,36px);
+            font-weight: 700; color: var(--white); flex: 1;
+        }
+        .showreel-fs-title em { font-style: italic; color: var(--g2); }
+        .showreel-fs-duration {
+            font-size: 10px; font-weight: 600; letter-spacing: 2px;
+            color: var(--muted); display: flex; align-items: center; gap: 6px;
+        }
+        .showreel-frame {
+            position: relative; width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            overflow: hidden;
+            background: #050200;
+            border: 1px solid rgba(212,168,67,0.1);
+        }
+        .showreel-play-ring {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            border: 1px solid rgba(212,168,67,0.3);
+            display: flex; align-items: center; justify-content: center;
+            animation: ringPulse 2.5s ease-in-out infinite;
+            z-index: 3;
+        }
+        @keyframes ringPulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(212,168,67,0.25); }
+            50%      { box-shadow: 0 0 0 18px rgba(212,168,67,0); }
+        }
+        .showreel-play-btn {
+            width: 70px !important; height: 70px !important;
+            font-size: 28px !important;
+        }
+        .showreel-bottom-bar {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(6,3,0,0.85), transparent);
+            padding: 32px 28px 20px;
+            display: flex; align-items: center; justify-content: space-between;
+            z-index: 4;
+        }
+        .sb-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(212,168,67,0.65); }
+        .sb-expand { font-size: 18px; color: rgba(212,168,67,0.4); }
+
+        /* ── SERVICIOS — JERARQUÍA DIFERENCIADA ── */
+        .eco-service-num {
+            font-family: var(--font-head);
+            font-size: 64px; font-weight: 900;
+            color: rgba(212,168,67,0.07);
+            line-height: 1; margin-bottom: 4px;
+            letter-spacing: -2px;
+            transition: color .4s;
+        }
+        .eco-card:hover .eco-service-num { color: rgba(212,168,67,0.13); }
+        .eco-accent-bar {
+            width: 40px; height: 3px;
+            background: linear-gradient(to right, var(--g1), var(--fire2));
+            margin-bottom: 24px;
+        }
+        .eco-card--ads {
+            background: linear-gradient(160deg, rgba(212,168,67,0.04) 0%, var(--card) 60%);
+            border-left: 2px solid rgba(212,168,67,0.25);
+        }
+        .eco-card--video {
+            border-left: 2px solid rgba(201,58,12,0.35);
+        }
+        .eco-result-badge {
+            margin-top: 20px;
+            display: inline-flex; align-items: center; gap: 7px;
+            font-size: 9px; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--g1);
+            background: rgba(212,168,67,0.05);
+            border: 1px solid rgba(212,168,67,0.14);
+            padding: 6px 14px;
+        }
+        .eco-result-badge i { font-size: 11px; color: var(--fire2); }
+
+        /* ── TESTIMONIALES ── */
+        .testimonials-sec { background: rgba(10,6,2,0.6); }
+        .testi-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 4px; margin-top: 56px;
+        }
+        .testi-card {
+            background: var(--card);
+            padding: 44px 38px;
+            position: relative; overflow: hidden;
+            border-top: 1px solid rgba(212,168,67,0.06);
+            display: flex; flex-direction: column; gap: 0;
+            transition: transform .35s cubic-bezier(.16,1,.3,1), border-color .35s;
+        }
+        .testi-card:hover { transform: translateY(-5px); border-top-color: var(--g1); }
+        .testi-card--featured {
+            background: linear-gradient(155deg, rgba(212,168,67,0.05) 0%, var(--card) 55%);
+            border-top: 2px solid var(--g1);
+        }
+        .testi-quote-mark {
+            font-family: var(--font-head); font-size: 96px;
+            line-height: 0.7; color: rgba(212,168,67,0.1);
+            margin-bottom: 20px; font-weight: 900;
+            user-select: none;
+        }
+        .testi-text {
+            font-size: 14.5px; line-height: 1.85;
+            color: rgba(242,232,208,0.8);
+            flex: 1; margin-bottom: 32px;
+        }
+        .testi-footer {
+            display: flex; align-items: center; gap: 14px;
+            flex-wrap: wrap;
+        }
+        .testi-avatar {
+            width: 46px; height: 46px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .testi-avatar span {
+            font-size: 14px; font-weight: 800; color: rgba(255,255,255,0.9);
+            font-family: var(--font-head);
+        }
+        .testi-meta { flex: 1; }
+        .testi-name { font-size: 14px; font-weight: 700; color: var(--white); letter-spacing: 0.3px; }
+        .testi-role { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-top: 3px; }
+        .testi-stat { text-align: right; flex-shrink: 0; }
+        .testi-stat-n { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--g2); line-height: 1; }
+        .testi-stat-l { font-size: 8px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-top: 3px; }
+
+        /* ── FOOTER EXPANDIDO ── */
+        footer { border-top: 1px solid rgba(212,168,67,.08); background: #030100; }
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+            gap: 48px; padding: 80px 0 64px;
+        }
+        .footer-col {}
+        .footer-logo { height: 48px; width: auto; margin-bottom: 18px; filter: drop-shadow(0 0 8px rgba(212,168,67,0.2)); }
+        .footer-tagline { font-size: 14px; line-height: 1.75; color: var(--muted); margin-bottom: 24px; }
+        .footer-social { display: flex; gap: 14px; }
+        .footer-social a {
+            width: 38px; height: 38px; border-radius: 50%;
+            border: 1px solid rgba(212,168,67,0.15);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; color: var(--muted); text-decoration: none;
+            transition: all .3s;
+        }
+        .footer-social a:hover { border-color: var(--g1); color: var(--g2); transform: translateY(-2px); }
+        .footer-col-title {
+            font-size: 9px; font-weight: 700; letter-spacing: 3.5px;
+            text-transform: uppercase; color: var(--g1);
+            margin-bottom: 22px; padding-bottom: 10px;
+            border-bottom: 1px solid rgba(212,168,67,0.1);
+        }
+        .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a {
+            font-size: 13px; color: var(--muted); text-decoration: none;
+            transition: color .25s;
+        }
+        .footer-links a:hover { color: var(--g2); }
+        .footer-bottom {
+            border-top: 1px solid rgba(212,168,67,0.06);
+            padding: 20px 24px;
+            font-size: 10px; letter-spacing: 1.5px; color: rgba(154,128,96,0.5);
+            text-transform: uppercase;
+        }
+
+        /* ── WHATSAPP FLOTANTE ── */
+        .wa-float {
+            position: fixed; bottom: 28px; left: 28px; z-index: 9997;
+            background: #25D366;
+            color: #fff; text-decoration: none;
+            border-radius: 50px;
+            display: flex; align-items: center; gap: 10px;
+            padding: 12px 18px 12px 14px;
+            box-shadow: 0 6px 28px rgba(37,211,102,0.4);
+            transition: all .35s cubic-bezier(.16,1,.3,1);
+            font-size: 13px; font-weight: 700;
+        }
+        .wa-float:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 12px 40px rgba(37,211,102,0.55);
+            color: #fff;
+        }
+        .wa-float-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; white-space: nowrap; }
+        @media (max-width: 480px) {
+            .wa-float { padding: 12px; border-radius: 50%; }
+            .wa-float-label { display: none; }
+        }
+
+        /* ── RESPONSIVE NUEVAS SECCIONES ── */
+        @media (max-width: 1024px) {
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+            .testi-grid { grid-template-columns: 1fr 1fr; }
+            .testi-card--featured { grid-column: span 2; }
+        }
+        @media (max-width: 768px) {
+            .showreel-fs-header { flex-direction: column; gap: 8px; }
+            .testi-grid { grid-template-columns: 1fr; }
+            .testi-card--featured { grid-column: span 1; }
+            .testi-card { padding: 32px 24px; }
+            .testi-quote-mark { font-size: 64px; }
+            .footer-inner { grid-template-columns: 1fr; gap: 32px; padding: 56px 0 48px; }
+            .footer-bottom { text-align: center; flex-direction: column; }
+            .eco-service-num { font-size: 48px; }
+            .showreel-play-ring { width: 70px; height: 70px; }
+            .showreel-play-btn { width: 54px !important; height: 54px !important; font-size: 22px !important; }
         }
     </style>
 </head>
@@ -664,15 +1305,18 @@
             <img src="icons/Kaizen PNG.png" alt="Logo Corporativo Kaizen Leap" class="brand-logo-img">
             <h2 class="logo-txt">Kaizen <em>Leap</em></h2>
         </a>
-        <nav class="main-nav">
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li class="nav-proposal-highlight"><a href="https://kaizenleap.github.io/KaizenLeapOn/" target="_blank">Modelos de Inversión</a></li>
-                <li><a href="#showroom">Showroom</a></li>
-                <li><a href="#ecosistema">Ecosistema</a></li>
-                <li><a href="#pipeline">Pipeline</a></li>
-                <li><a href="#hub">Hub Creativo</a></li>
-                <li><a href="#briefing">Contacto</a></li>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-proposal-highlight"><a href="https://kaizenleap.github.io/KaizenLeapOn/" target="_blank" class="nav-link">Planes & Precios</a></li>
+                <li><a href="#showroom" class="nav-link">Portafolio</a></li>
+                <li><a href="#ecosistema" class="nav-link">Servicios</a></li>
+                <li><a href="#resultados" class="nav-link">Por Qué Nosotros</a></li>
+                <li><a href="#pipeline" class="nav-link">Proceso</a></li>
+                <li><a href="#briefing" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
     </div>
@@ -718,11 +1362,11 @@
         </div>
         
         <!-- Eyebrow -->
-        <div class="eyebrow" data-aos="fade-up" data-aos-delay="80">Marketing Global · VFX · Cine Comercial</div>
+        <div class="eyebrow" data-aos="fade-up" data-aos-delay="80">Marketing Digital · Contenido que Vende · Resultados Reales</div>
 
         <!-- Título con ornamentos -->
         <div class="hero-h1-wrap" data-aos="fade-up" data-aos-delay="120">
-            <h1 class="hero-h1">Visión de <em>Cine</em>,<br>Estrategia de <em>Negocio</em></h1>
+            <h1 class="hero-h1">Tu Marca Vende<br>o Solo <em>Existe</em></h1>
         </div>
 
         <!-- Divider ornamental -->
@@ -731,30 +1375,30 @@
         </div>
 
         <!-- Párrafo -->
-        <p class="hero-p" data-aos="fade-up" data-aos-delay="170">Redefinimos la presencia digital de marcas líderes. En <strong>Kaizen Leap</strong> fusionamos dirección de arte premium, VFX avanzados y marketing estratégico para convertir tu negocio en <strong>autoridad indiscutible</strong> con <strong>retorno medible</strong>.</p>
+        <p class="hero-p" data-aos="fade-up" data-aos-delay="170">En <strong>Kaizen Leap</strong> convertimos negocios invisibles en marcas que generan demanda. Estrategia digital, contenido de alto impacto y campañas de pauta que producen <strong>clientes reales</strong>, no solo likes.</p>
         
         <!-- Counters animados -->
         <div class="hero-counters" data-aos="fade-up" data-aos-delay="190">
             <div class="hero-counter">
                 <span class="hc-n" data-target="50">0</span>
-                <span class="hc-l">Proyectos+</span>
+                <span class="hc-l">Marcas Activas</span>
             </div>
             <div class="hero-counter">
-                <span class="hc-n" data-target="100">0</span>
-                <span class="hc-l">% Original</span>
+                <span class="hc-n" data-suffix="M+">3</span>
+                <span class="hc-l">Alcance Orgánico</span>
             </div>
             <div class="hero-counter">
                 <span class="hc-n" data-suffix=" Años">5</span>
-                <span class="hc-l">Experiencia</span>
+                <span class="hc-l">En el Mercado</span>
             </div>
             <div class="hero-counter">
-                <span class="hc-n" data-suffix="K">8</span>
-                <span class="hc-l">VFX Workflow</span>
+                <span class="hc-n" data-suffix="x">4</span>
+                <span class="hc-l">ROI Promedio Ads</span>
             </div>
         </div>
         
         <!-- CTAs -->
-        <div class="cta-row" data-aos="fade-up" data-aos-delay="210">
+        <div class="cta-row" data-aos="fade-up" data-aos-delay="210" style="justify-content:center;">
             <a href="https://kaizenleap.github.io/KaizenLeapOn/" target="_blank" class="btn-gold">✦ Ver Propuestas Comerciales</a>
             <a href="#briefing" class="btn-ghost">Iniciar Proyecto</a>
         </div>
@@ -771,19 +1415,19 @@
     <div class="stats-inner">
         <div class="stat" data-aos="fade-up">
             <span class="stat-n">50+</span>
-            <span class="stat-l">Proyectos Globales</span>
+            <span class="stat-l">Marcas Trabajadas</span>
         </div>
         <div class="stat" data-aos="fade-up" data-aos-delay="100">
-            <span class="stat-n">100%</span>
-            <span class="stat-l">Contenido Original</span>
+            <span class="stat-n">3M+</span>
+            <span class="stat-l">Alcance Generado</span>
         </div>
         <div class="stat" data-aos="fade-up" data-aos-delay="200">
-            <span class="stat-n">8K VFX</span>
-            <span class="stat-l">Workflow Cinematic</span>
+            <span class="stat-n">Meta Ads</span>
+            <span class="stat-l">Pauta Certificada</span>
         </div>
         <div class="stat" data-aos="fade-up" data-aos-delay="300">
-            <span class="stat-n">ROI</span>
-            <span class="stat-l">Resultados Líquidos</span>
+            <span class="stat-n">4x ROI</span>
+            <span class="stat-l">Retorno Promedio</span>
         </div>
     </div>
 </div>
@@ -794,12 +1438,22 @@
     <h2 class="sec-h" data-aos="fade-up">Trabajo que habla<br><em>por sí solo</em></h2>
     <p style="max-width:620px;margin-bottom:64px;" data-aos="fade-up">Cada pieza fue producida con intención comercial, dirección de arte aplicada y entrega profesional. Esto es lo que hacemos, no lo que prometemos.</p>
 
-    <!-- SHOWREEL PRINCIPAL (CLICK-TO-PLAY) -->
-    <div class="showreel-wrap" data-aos="fade-up">
-        <div class="showreel-label">✦ SHOWREEL OFICIAL · KAIZEN LEAP · 2026</div>
+    <!-- SHOWREEL PRINCIPAL FULLSCREEN -->
+    <div class="showreel-wrap showreel-fullscreen" data-aos="fade-up">
+        <div class="showreel-fs-header">
+            <div class="showreel-fs-eyebrow"><span class="sr-dot"></span> SHOWREEL OFICIAL · 2026</div>
+            <div class="showreel-fs-title">Kaizen Leap <em>en Acción</em></div>
+            <div class="showreel-fs-duration"><i class="bi bi-clock"></i> 2:47 min</div>
+        </div>
         <div class="showreel-frame click-to-play" data-video-id="1KRveqzXiVlQnsqOeZ22oQX6NNsZHrOmT">
             <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1KRveqzXiVlQnsqOeZ22oQX6NNsZHrOmT&sz=w1200');">
-                <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+                <div class="showreel-play-ring">
+                    <div class="play-btn-overlay showreel-play-btn"><i class="bi bi-play-fill"></i></div>
+                </div>
+                <div class="showreel-bottom-bar">
+                    <span class="sb-label">Ver Showreel Completo</span>
+                    <span class="sb-expand"><i class="bi bi-arrows-fullscreen"></i></span>
+                </div>
             </div>
         </div>
     </div>
@@ -816,7 +1470,16 @@
     </div>
 
     <!-- GRID DE PORTAFOLIO ORIGINAL INTACTO -->
-    <div class="port-grid" id="portGrid">
+    <!-- ══ ACCORDION PORTAFOLIO EXPANDIBLE ══ -->
+<div class="portfolio-accordion" id="portfolioAccordion">
+    <button class="port-expand-btn" id="portExpandBtn" onclick="togglePortfolio()">
+        <span class="peb-icon"><i class="bi bi-play-circle"></i></span>
+        <span class="peb-text">Ver todos nuestros trabajos</span>
+        <span class="peb-count">40+ producciones</span>
+        <span class="peb-arrow"><i class="bi bi-chevron-down"></i></span>
+    </button>
+    <div class="port-grid-wrapper" id="portGridWrapper">
+        <div class="port-grid" id="portGrid">
 
         <!-- ══ COMERCIALES ══ -->
         <div class="port-card" data-cat="comercial" data-aos="fade-up">
@@ -1108,31 +1771,9 @@
         </div>
 
         <!-- ══ LIFESTYLE & BARBERÍAS ══ -->
-        <div class="port-card port-card--reel" data-cat="lifestyle" data-aos="fade-up">
-            <div class="port-media port-media--reel click-to-play" data-video-id="1X3XJ5jz7cnRmGszC1njk_20fDv2ZtJpa">
-                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1X3XJ5jz7cnRmGszC1njk_20fDv2ZtJpa&sz=w800');">
-                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
-                </div>
-            </div>
-            <div class="port-info">
-                <span class="port-tag">Barbería · Reel · Lifestyle</span>
-                <h4>Planadas Barber</h4>
-                <p>Reel de barbería con producción vertical optimizada para redes. Detalle de servicio, ambiente y marca personal del establecimiento.</p>
-            </div>
-        </div>
+        
 
-        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="60">
-            <div class="port-media click-to-play" data-video-id="1W3h_3ytyRnuJB8CW19G9qxe-Q4hmic1P">
-                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1W3h_3ytyRnuJB8CW19G9qxe-Q4hmic1P&sz=w800');">
-                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
-                </div>
-            </div>
-            <div class="port-info">
-                <span class="port-tag">Barbería · Lifestyle · Mosquera</span>
-                <h4>Cambio de Look · Sede Mosquera</h4>
-                <p>Producción de contenido lifestyle para barbería. Narrativa de transformación con cinematografía de detalle y edición dinámica.</p>
-            </div>
-        </div>
+        
 
         <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="80">
             <div class="port-media click-to-play" data-video-id="1JvKwcmx0nvaFgVcdCt3nSEyVDKwfAd1j">
@@ -1147,70 +1788,15 @@
             </div>
         </div>
 
-        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="100">
-            <div class="port-media click-to-play" data-video-id="16YOhLaKz-YnEsCH-dX1E4q6r7owZE1uu">
-                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=16YOhLaKz-YnEsCH-dX1E4q6r7owZE1uu&sz=w800');">
-                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
-                </div>
-            </div>
-            <div class="port-info">
-                <span class="port-tag">Barbería · Acción · Estética</span>
-                <h4>Action Shot · Barbas Kingdom</h4>
-                <p>Producción de acción para barbería con cinematografía dinámica, slow motion y edición de alto impacto para contenido viral.</p>
-            </div>
-        </div>
+        
 
-        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="120">
-            <div class="port-media click-to-play" data-video-id="1U5ZtEts3-onAoh87ZWH0brF5yZ3oQtaR">
-                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1U5ZtEts3-onAoh87ZWH0brF5yZ3oQtaR&sz=w800');">
-                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
-                </div>
-            </div>
-            <div class="port-info">
-                <span class="port-tag">Salón de Belleza · Lifestyle</span>
-                <h4>Salón K&Q · Contenido de Marca</h4>
-                <p>Producción audiovisual para salón de belleza. Ambiente, servicio y narrativa de marca orientada a captación de nuevos clientes.</p>
-            </div>
-        </div>
+        
 
-        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="140">
-            <div class="port-media click-to-play" data-video-id="1-UqrHAtySG1XsF3X95lZ1vYr5p-bsYfw">
-                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1-UqrHAtySG1XsF3X95lZ1vYr5p-bsYfw&sz=w800');">
-                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
-                </div>
-            </div>
-            <div class="port-info">
-                <span class="port-tag">Estudio de Tatuajes · Arte Corporal</span>
-                <h4>Brian Tattoo · Producción de Marca</h4>
-                <p>Producción visual para artista del tatuaje. Proceso, obra y ambiente con fotografía y video que elevan la percepción de marca.</p>
-            </div>
-        </div>
+        
 
-        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="80">
-            <div class="port-media click-to-play" data-video-id="1BNS4uJ_Fpz9b9GMsvBYIIFixtSLu_YyM">
-                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1BNS4uJ_Fpz9b9GMsvBYIIFixtSLu_YyM&sz=w800');">
-                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
-                </div>
-            </div>
-            <div class="port-info">
-                <span class="port-tag">Fitness · Entrenamiento Personal</span>
-                <h4>Reel León Gym</h4>
-                <p>Reel de alto impacto para gimnasio. Cinematografía de acción, motivación y narrativa de marca para redes sociales.</p>
-            </div>
-        </div>
+        
 
-        <div class="port-card" data-cat="lifestyle" data-aos="fade-up" data-aos-delay="100">
-            <div class="port-media click-to-play" data-video-id="1Q06tISHvRbjkHehTMw72u3Yx1jfEFzsY">
-                <div class="video-placeholder" style="background-image: url('https://drive.google.com/thumbnail?id=1Q06tISHvRbjkHehTMw72u3Yx1jfEFzsY&sz=w800');">
-                    <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
-                </div>
-            </div>
-            <div class="port-info">
-                <span class="port-tag">Fitness · Acción · Gym</span>
-                <h4>Gym Action · León Gym</h4>
-                <p>Producción de acción para entrenamiento personal. Slow motion, dinamismo y edición de alto ritmo para contenido fitness premium.</p>
-            </div>
-        </div>
+        
 
         <!-- ══ CORPORATIVO & SOCIAL ══ -->
         <div class="port-card" data-cat="corporativo" data-aos="fade-up" data-aos-delay="60">
@@ -1320,6 +1906,8 @@
         </div>
 
     </div><!-- /port-grid -->
+    </div>
+</div>
 </div>
 </section>
 
@@ -1327,29 +1915,66 @@
 
 <section class="sec" id="ecosistema">
 <div class="wrap">
-    <div class="sec-eye" data-aos="fade-right">Ecosistemas Temáticos Claros</div>
-    <h2 class="sec-h" data-aos="fade-up">Estructura de Contenido para<br><em>Marcas de Nivel Internacional</em></h2>
+    <div class="sec-eye" data-aos="fade-right">Lo Que Realmente Hacemos</div>
+    <h2 class="sec-h" data-aos="fade-up">Servicios Que Mueven<br><em>Tu Negocio</em></h2>
+    <p style="max-width:620px;margin-bottom:64px;" data-aos="fade-up">No vendemos producción por producción. Cada servicio está diseñado para que tu marca genere más clientes, más ventas y más presencia donde tu competencia aún no llega.</p>
     
     <div class="eco-grid">
+        <!-- CARD 1 — Featured: gran jerarquía, borde dorado, número grande -->
         <div class="eco-card eco-featured" data-aos="fade-up">
-            <span class="eco-icon"><i class="bi bi-camera-reels"></i></span>
-            <h4>Cine Comercial & VFX Workflows</h4>
-            <p>Estructuración e integración de activos audiovisual de vanguardia. En Kaizen Leap producimos piezas comerciales premium y contenido omnicanal unificado bajo procesos estrictos de post-producción digital y efectos visuales de alta gama.</p>
+            <div class="eco-service-num">01</div>
+            <div class="eco-accent-bar"></div>
+            <span class="eco-icon"><i class="bi bi-graph-up-arrow"></i></span>
+            <h4>Gestión de Redes Sociales & Contenido</h4>
+            <p>Tu marca publicando todos los días, con estrategia. Creamos el calendario editorial, producimos el contenido, lo publicamos y analizamos qué funciona. Instagram, TikTok, Facebook — todo coordinado para construir comunidad real y atraer clientes de forma constante.</p>
+            <div class="eco-tags">
+                <span class="eco-tag-pill">Calendario mensual</span>
+                <span class="eco-tag-pill">Reels & stories</span>
+                <span class="eco-tag-pill">Copywriting</span>
+                <span class="eco-tag-pill">Análisis mensual</span>
+            </div>
+            <div class="eco-result-badge"><i class="bi bi-arrow-up-right"></i> +340% alcance promedio mensual</div>
         </div>
-        <div class="eco-card" data-aos="fade-up" data-aos-delay="100">
-            <span class="eco-icon"><i class="bi bi-fullscreen"></i></span>
-            <h4>Fotografía High-End Studio</h4>
-            <p>Captura de activos visuales de alta definición con iluminación y dirección artística de nivel cinematográfico, organizados de forma limpia en módulos estratégicos.</p>
+
+        <!-- CARD 2 — Highlight diferencial: fondo sutil dorado -->
+        <div class="eco-card eco-card--ads" data-aos="fade-up" data-aos-delay="80">
+            <div class="eco-service-num">02</div>
+            <span class="eco-icon"><i class="bi bi-megaphone"></i></span>
+            <h4>Pauta Pagada · Meta & Google Ads</h4>
+            <p>Campañas que llegan a quien tiene dinero y ganas de comprar. Segmentación por ubicación, edad, intereses y comportamiento. Inviertes $1 y sabes exactamente cuánto te devuelve.</p>
+            <div class="eco-tags">
+                <span class="eco-tag-pill">Facebook & Instagram Ads</span>
+                <span class="eco-tag-pill">Google Ads</span>
+                <span class="eco-tag-pill">Retargeting</span>
+            </div>
+            <div class="eco-result-badge"><i class="bi bi-arrow-up-right"></i> 4x ROI promedio en campañas activas</div>
         </div>
-        <div class="eco-card" data-aos="fade-up" data-aos-delay="200">
-            <span class="eco-icon"><i class="bi bi-cpu"></i></span>
-            <h4>Digital Twins & AI Spokesperson</h4>
-            <p>Evolución técnica del talento en pantalla. Configuración inteligente de avatares corporativos y voceros remotos hiperrealistas para mantener un ritmo de comunicación global y constante.</p>
+
+        <!-- CARD 3 — Borde lateral izquierdo rojo fuego -->
+        <div class="eco-card eco-card--video" data-aos="fade-up" data-aos-delay="160">
+            <div class="eco-service-num">03</div>
+            <span class="eco-icon"><i class="bi bi-camera-video"></i></span>
+            <h4>Producción de Contenido Visual</h4>
+            <p>Video y foto de nivel profesional para que tu producto o servicio luzca como merece. Reels para TikTok e Instagram, comerciales para pauta, contenido de producto y de marca — todo orientado a que convierta.</p>
+            <div class="eco-tags">
+                <span class="eco-tag-pill">Videos para redes</span>
+                <span class="eco-tag-pill">Fotografía de producto</span>
+                <span class="eco-tag-pill">Reels virales</span>
+            </div>
+            <div class="eco-result-badge"><i class="bi bi-arrow-up-right"></i> Entrega en 3 días hábiles</div>
         </div>
-        <div class="eco-card" data-aos="fade-up" data-aos-delay="300">
-            <span class="eco-icon"><i class="bi bi-pie-chart"></i></span>
-            <h4>Estrategia de Conversión & Meta Ads</h4>
-            <p>Administración y despliegue técnico de campañas publicitarias estructuradas específicamente para multiplicar el retorno de inversión de los módulos audiovisuales desarrollados.</p>
+
+        <!-- CARD 4 — más compacta, tono neutro para jerarquía -->
+        <div class="eco-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="eco-service-num">04</div>
+            <span class="eco-icon"><i class="bi bi-palette2"></i></span>
+            <h4>Identidad de Marca & Diseño Gráfico</h4>
+            <p>Logo, colores, tipografías, piezas para redes, flyers, menús, banners — todo lo visual que necesita tu negocio para verse profesional y coherente en todos lados.</p>
+            <div class="eco-tags">
+                <span class="eco-tag-pill">Branding completo</span>
+                <span class="eco-tag-pill">Diseño para redes</span>
+                <span class="eco-tag-pill">Piezas gráficas</span>
+            </div>
         </div>
     </div>
 </div>
@@ -1359,34 +1984,138 @@
 
 <section class="sec" id="pipeline">
 <div class="wrap">
-    <div class="sec-eye" data-aos="fade-right">Transparencia y Control Absoluto</div>
-    <h2 class="sec-h" data-aos="fade-up">El Flujo Limpio del<br><em>Activo Digital</em></h2>
+    <div class="sec-eye" data-aos="fade-right">Cómo Trabajamos</div>
+    <h2 class="sec-h" data-aos="fade-up">Del Cero al Cliente:<br><em>Nuestro Proceso</em></h2>
+    <p style="max-width:580px;margin-bottom:0;" data-aos="fade-up">Sin procesos improvisados. Cada proyecto sigue un flujo claro donde sabes qué pasa en cada etapa y cuándo lo recibes.</p>
     
-    <div class="pipe-grid" data-aos="fade-up">
+    <div class="pipe-grid" data-aos="fade-up" data-aos-delay="100">
         <div class="pipe-step">
             <div class="pipe-n">01</div>
-            <div class="pipe-t">Ingesta</div>
-            <p class="pipe-d">Briefing inteligente alineado con los objetivos de posicionamiento estético global de la marca.</p>
+            <div class="pipe-t">Diagnóstico</div>
+            <p class="pipe-d">Reunión de 30 minutos donde entendemos tu negocio, tu cliente ideal y qué objetivos tienes: más ventas, más seguidores, más reconocimiento.</p>
         </div>
         <div class="pipe-step">
             <div class="pipe-n">02</div>
-            <div class="pipe-t">Dirección</div>
-            <p class="pipe-d">Estructuración de ideas, copys de marca, diseño de flyers e historias dinámicas.</p>
+            <div class="pipe-t">Estrategia</div>
+            <p class="pipe-d">Armamos el plan: qué publicar, cuándo, en qué plataformas y con cuánta pauta — todo alineado a tu presupuesto y a tu cliente.</p>
         </div>
         <div class="pipe-step">
             <div class="pipe-n">03</div>
             <div class="pipe-t">Producción</div>
-            <p class="pipe-d">Rodaje cinematográfico fotorrealista y despliegue de flujos técnicos de VFX.</p>
+            <p class="pipe-d">Video, foto, diseño y copy — producimos todo el contenido del mes con calidad profesional y enfoque en conversión.</p>
         </div>
         <div class="pipe-step">
             <div class="pipe-n">04</div>
-            <div class="pipe-t">Ecosistema</div>
-            <p class="pipe-d">Entrega unificada del reporte final y los activos organizados de forma impecable por carpetas modulares.</p>
+            <div class="pipe-t">Publicación</div>
+            <p class="pipe-d">Gestionamos tus cuentas, publicamos en los mejores horarios, respondemos comentarios y mantenemos la marca activa todos los días.</p>
         </div>
         <div class="pipe-step">
             <div class="pipe-n">05</div>
-            <div class="pipe-t">Métricas</div>
-            <p class="pipe-d">Análisis mensual de conversión publicitaria y optimización constante del rendimiento de la marca.</p>
+            <div class="pipe-t">Resultados</div>
+            <p class="pipe-d">Reporte mensual claro: cuánto alcanzaste, cuánto costó cada cliente nuevo y qué ajustamos para el próximo mes.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<hr class="div-line">
+
+<hr class="div-line">
+
+<!-- ══ TESTIMONIALES ══ -->
+<section class="sec testimonials-sec" id="testimonios">
+<div class="wrap">
+    <div class="sec-eye" data-aos="fade-right">Lo que Dicen Nuestros Clientes</div>
+    <h2 class="sec-h" data-aos="fade-up">Resultados que<br><em>Hablan por Ellos</em></h2>
+
+    <div class="testi-grid">
+        <div class="testi-card testi-card--featured" data-aos="fade-up">
+            <div class="testi-quote-mark">"</div>
+            <p class="testi-text">Con Kaizen Leap pasamos de casi no tener presencia en redes a tener contenido de calidad todos los días. Las fotos y videos de nuestras pizzas se ven increíbles y los clientes nos dicen que nos conocieron por Instagram o TikTok. El equipo responde rápido y siempre propone ideas nuevas.</p>
+            <div class="testi-footer">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#C8102E,#8B0000);">
+                    <span>KR</span>
+                </div>
+                <div class="testi-meta">
+                    <div class="testi-name">Kevin Rico</div>
+                    <div class="testi-role">Gerente · <span style="color:#C8102E;">Súper Pizza</span> · 6 sedes · Cundinamarca</div>
+                </div>
+                <div class="testi-stat">
+                    <div class="testi-stat-n">+800%</div>
+                    <div class="testi-stat-l">Crecimiento en redes</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="testi-quote-mark">"</div>
+            <p class="testi-text">La cobertura del evento superó nuestras expectativas. Kaizen Leap capturó la energía de la marca exactamente como la necesitábamos: profesional, dinámica y con identidad propia. El resultado final fue una pieza que usamos en todos nuestros canales.</p>
+            <div class="testi-footer">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#8B0000,#4a0000);">
+                    <span>KR</span>
+                </div>
+                <div class="testi-meta">
+                    <div class="testi-name">Kola Román</div>
+                    <div class="testi-role">Marca Nacional · Evento Corporativo · Colombia</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="180">
+            <div class="testi-quote-mark">"</div>
+            <p class="testi-text">El comercial que hicieron para el parque fue exactamente lo que necesitábamos: movimiento, energía, emoción. El equipo entiende cómo comunicar para que la gente quiera venir.</p>
+            <div class="testi-footer">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#003087,#001a4d);">
+                    <span>SL</span>
+                </div>
+                <div class="testi-meta">
+                    <div class="testi-name">Salitre Mágico</div>
+                    <div class="testi-role">Parque Temático · Bogotá</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<hr class="div-line">
+
+<!-- ══ SECCIÓN RESULTADOS / POR QUÉ ELEGIRNOS ══ -->
+<section class="sec" id="resultados">
+<div class="wrap">
+    <div class="sec-eye" data-aos="fade-right">Por Qué Elegirnos</div>
+    <h2 class="sec-h" data-aos="fade-up">Lo Que Nos Diferencia<br>de la <em>Competencia</em></h2>
+
+    <div class="results-grid">
+        <div class="result-card" data-aos="fade-up">
+            <div class="result-icon"><i class="bi bi-bullseye"></i></div>
+            <h4>Contenido que vende, no solo que se ve bien</h4>
+            <p>Cada video, foto o diseño tiene un objetivo claro: que alguien se comunique con tu negocio. No hacemos arte por arte — hacemos marketing.</p>
+        </div>
+        <div class="result-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="result-icon"><i class="bi bi-clock-history"></i></div>
+            <h4>Entrega en 3 días hábiles</h4>
+            <p>Las redes no esperan. Trabajamos con tiempos reales para que tu marca esté activa sin retrasos ni excusas.</p>
+        </div>
+        <div class="result-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="result-icon"><i class="bi bi-shield-check"></i></div>
+            <h4>Transparencia total en resultados</h4>
+            <p>Todos los meses recibís un reporte claro: cuántas personas vieron tu contenido, cuánto costó cada contacto nuevo y qué cambios hacemos.</p>
+        </div>
+        <div class="result-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="result-icon"><i class="bi bi-people"></i></div>
+            <h4>Equipo completo, no freelancers sueltos</h4>
+            <p>Director creativo, editor, estratega de pauta y diseñador — todos coordinados en un solo equipo que responde por el resultado.</p>
+        </div>
+        <div class="result-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="result-icon"><i class="bi bi-geo-alt"></i></div>
+            <h4>Presencia local, ejecución profesional</h4>
+            <p>Operamos en Cundinamarca y Bogotá. Conocemos el mercado, los horarios y el comportamiento del consumidor colombiano.</p>
+        </div>
+        <div class="result-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="result-icon"><i class="bi bi-arrow-repeat"></i></div>
+            <h4>Estrategia que evoluciona cada mes</h4>
+            <p>No repetimos la misma fórmula. Analizamos qué funcionó y optimizamos constantemente para que el próximo mes sea mejor que el anterior.</p>
         </div>
     </div>
 </div>
@@ -1396,24 +2125,25 @@
 
 <section class="sec" id="hub">
 <div class="wrap">
-    <div class="sec-eye" data-aos="fade-right">Visión de Autor</div>
-    <h2 class="sec-h" data-aos="fade-up">Especialistas Detrás de<br><em>Tu Identidad Audiovisual</em></h2>
+    <div class="sec-eye" data-aos="fade-right">El Equipo</div>
+    <h2 class="sec-h" data-aos="fade-up">Las Personas Detrás<br>de <em>Tu Estrategia</em></h2>
+    <p style="max-width:580px;margin-bottom:0;" data-aos="fade-up">No tercerizamos. El equipo que atiende a cada cliente es el mismo que produce el contenido, maneja la pauta y analiza los resultados.</p>
     
     <div class="team-grid">
         <div class="team-card" data-aos="fade-up">
-            <div class="team-role">Director Creativo & VFX</div>
-            <div class="team-name">Juan David Castro</div>
-            <p class="team-desc">Dirección de arte premium, diseño de workflows de post-producción cinematográfica hiperrealista y control estratégico del rendimiento visual global de Kaizen Leap.</p>
+            <div class="team-role">Dirección Creativa & Estrategia</div>
+            <div class="team-name">Director Creativo</div>
+            <p class="team-desc">Define la estrategia de cada cliente: qué publicar, cómo posicionarse y cómo convertir atención en ventas reales. Experiencia con marcas de gastronomía, entretenimiento y servicios en Cundinamarca y Bogotá.</p>
         </div>
         <div class="team-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-role">Editor de Contenido Senior</div>
-            <div class="team-name">Producción Visual</div>
-            <p class="team-desc">Especialista en narrativa audiovisual, corrección de color cinemática y optimización omnicanal de activos con entregas eficientes en 3 días hábiles.</p>
+            <div class="team-role">Producción Visual & Edición</div>
+            <div class="team-name">Equipo de Producción</div>
+            <p class="team-desc">Responsable de que cada pieza visual tenga el nivel que la marca merece. Video, color, motion graphics y reels optimizados para cada plataforma — entregados en tiempo y con calidad que se nota.</p>
         </div>
         <div class="team-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-role">AI Spokesperson Specialist</div>
-            <div class="team-name">Cara de tu Marca</div>
-            <p class="team-desc">Evolución técnica en cámara a través del modelado de gemelos digitales y avatares corporativos hechos a la medida para expansión global omnicanal.</p>
+            <div class="team-role">Talento & Presentación en Cámara</div>
+            <div class="team-name">Presentadores de Marca</div>
+            <p class="team-desc">El negocio del cliente con cara y voz propia. Contamos con talento en cámara para que los reels, comerciales y testimoniales tengan la presencia que conecta con el cliente final. Hablamos en el idioma de su audiencia.</p>
         </div>
     </div>
 </div>
@@ -1423,31 +2153,125 @@
 
 <section class="sec brief-sec" id="briefing">
 <div class="wrap">
-    <div class="sec-eye" data-aos="fade-right" style="justify-content:center;">Portal de Calificación Corporativa</div>
-    <h2 class="sec-h" data-aos="fade-up">Inicia la Construcción de<br><em>Tu Autoridad Visual</em></h2>
-    <p data-aos="fade-up" data-aos-delay="100">Selecciona el módulo estratégico prioritario para iniciar el proceso de ingesta técnica de Kaizen Leap.</p>
+    <div class="sec-eye" data-aos="fade-right" style="justify-content:center;">Empecemos a Trabajar</div>
+    <h2 class="sec-h" data-aos="fade-up">¿En Qué Te Podemos<br><em>Ayudar Hoy?</em></h2>
+    <p data-aos="fade-up" data-aos-delay="100">Selecciona lo que más necesita tu negocio ahora mismo y te respondemos en menos de 2 horas.</p>
     
     <form class="brief-form" id="ingestaForm" data-aos="fade-up" data-aos-delay="200">
         <div class="brief-pills">
-            <label class="pill-wrap"><input type="radio" name="ingesta" value="vfx" class="pill-in" checked><span class="pill-btn">Cine Comercial & VFX</span></label>
-            <label class="pill-wrap"><input type="radio" name="ingesta" value="omnicanal" class="pill-in"><span class="pill-btn">Ecosistema Omnicanal</span></label>
-            <label class="pill-wrap"><input type="radio" name="ingesta" value="photo" class="pill-in"><span class="pill-btn">Fotografía High-End</span></label>
-            <label class="pill-wrap"><input type="radio" name="ingesta" value="twin" class="pill-in"><span class="pill-btn">Digital Twin / AI Avatar</span></label>
-            <label class="pill-wrap"><input type="radio" name="ingesta" value="roi" class="pill-in"><span class="pill-btn">Aceleración Ads & ROI</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="redes" class="pill-in" checked><span class="pill-btn">📱 Gestión de Redes Sociales</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="pauta" class="pill-in"><span class="pill-btn">🎯 Pauta & Meta Ads</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="contenido" class="pill-in"><span class="pill-btn">🎬 Producción de Contenido</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="branding" class="pill-in"><span class="pill-btn">🎨 Identidad & Branding</span></label>
+            <label class="pill-wrap"><input type="radio" name="ingesta" value="paquete" class="pill-in"><span class="pill-btn">🚀 Paquete Completo</span></label>
         </div>
-        <div class="cta-row">
-            <a href="https://wa.me/573181066522?text=%C2%A1Hola%2C%20equipo%20de%20Kaizen%20Leap!%20Estuve%20revisando%20su%20p%C3%A1gina%20y%20me%20interesa%20trabajar%20con%20ustedes.%20Me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20marketing%2C%20contenido%20y%20producci%C3%B3n%20visual.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F" class="btn-gold">Consultoría Inmediata (WhatsApp)</a>
-            <button type="submit" class="btn-ghost">Enviar Formulación de Briefing</button>
+        <div class="cta-row" style="justify-content:center;">
+            <a href="https://wa.me/573181066522?text=%C2%A1Hola%2C%20equipo%20de%20Kaizen%20Leap!%20Estuve%20revisando%20su%20p%C3%A1gina%20y%20me%20interesa%20trabajar%20con%20ustedes.%20Me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20marketing%2C%20contenido%20y%20producci%C3%B3n%20visual.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F" class="btn-gold">✦ Hablar por WhatsApp Ahora</a>
+            <button type="submit" class="btn-ghost">Enviar mi Interés</button>
         </div>
     </form>
+
+    <!-- Mini prueba social debajo del form -->
+    <div class="social-proof" data-aos="fade-up" data-aos-delay="300">
+        <div class="sp-items">
+            <div class="sp-item"><i class="bi bi-check-circle"></i> <span>Respondemos en menos de 2 horas</span></div>
+            <div class="sp-item"><i class="bi bi-check-circle"></i> <span>Sin compromisos en la primera llamada</span></div>
+            <div class="sp-item"><i class="bi bi-check-circle"></i> <span>Propuesta personalizada en 24h</span></div>
+        </div>
+    </div>
 </div>
 </section>
 
+<hr class="div-line">
+
+<!-- ══ SECCIÓN CLIENTES / MARCAS ══ -->
+<section class="sec clients-sec" id="clientes">
+<div class="wrap">
+    <div class="sec-eye" data-aos="fade-right" style="justify-content:center;">Marcas que Confían en Nosotros</div>
+    <h2 class="sec-h" style="text-align:center;" data-aos="fade-up">Nuestros <em>Clientes</em></h2>
+    <p style="text-align:center;max-width:520px;margin:0 auto 56px;" data-aos="fade-up">Empresas y marcas que eligieron crecer con Kaizen Leap. Cada una con su identidad, su historia y sus resultados.</p>
+
+    <div class="clients-carousel" data-aos="fade-up" data-aos-delay="100">
+        <!-- Súper Pizza -->
+        <div class="client-bubble">
+            <div class="client-tiktok-ring"></div>
+            <a href="https://www.tiktok.com/@superpizzaoficial" target="_blank" rel="noopener" class="client-link">
+                <div class="client-avatar" id="spAvatar"
+                     style="border-color:#C8102E; background: linear-gradient(145deg,#1a0000,#3d0000);">
+                    <img src="https://drive.google.com/thumbnail?id=1jnxWAtW7vjFAOPhG_d4B_KEuY3tPeRC-&sz=w200"
+                         alt="Súper Pizza"
+                         class="client-avatar-img"
+                         style="width:100%;height:100%;object-fit:cover;border-radius:50%;"
+                         onerror="this.style.display='none';document.getElementById('spAvatarFallback').style.display='flex'">
+                    <div id="spAvatarFallback" class="client-avatar-fallback" style="display:none; flex-direction:column; align-items:center; gap:4px;">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18" cy="18" r="17" stroke="#C8102E" stroke-width="1.5" fill="none"/>
+                            <text x="18" y="23" text-anchor="middle" font-size="14" font-weight="900" font-family="'Playfair Display',serif" fill="#C8102E">SP</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="client-info">
+                    <div class="client-name" style="color:#ff2d55; font-family:'Outfit',sans-serif; font-weight:800; letter-spacing:0; font-size:15px;">Súper Pizza</div>
+                    <div class="client-industry" style="color:rgba(255,45,85,0.55);">
+                        <i class="bi bi-tiktok" style="font-size:9px; margin-right:4px;"></i>Gastronomía · 6 sedes
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/573181066522?text=Hola%20Kaizen%20Leap%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." 
+   class="wa-float" target="_blank" rel="noopener" title="Escribir por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+    </svg>
+    <span class="wa-float-label">¿Hablamos?</span>
+</a>
+
 <footer>
-    <div class="wrap">
-        <img src="icons/Kaizen PNG.png" alt="Logotipo Institucional Kaizen Leap" class="footer-logo">
-        <p><strong>Kaizen Leap</strong> · Hub Audiovisual Global enfocado en el Rendimiento Estético · 2026</p>
-        <p style="margin-top:4px;font-size:9px;letter-spacing:3px;opacity:.4;">Mejora Continua · Cine Comercial · VFX Workflows · Resultados Reales</p>
+    <div class="footer-inner wrap">
+        <div class="footer-col footer-col--brand">
+            <img src="icons/Kaizen PNG.png" alt="Kaizen Leap" class="footer-logo">
+            <p class="footer-tagline">Convertimos marcas invisibles<br>en negocios que venden.</p>
+            <div class="footer-social">
+                <a href="https://www.tiktok.com/@kaizenleap" target="_blank" rel="noopener" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                <a href="https://www.instagram.com/kaizenleap" target="_blank" rel="noopener" title="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://wa.me/573181066522" target="_blank" rel="noopener" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <div class="footer-col-title">Servicios</div>
+            <ul class="footer-links">
+                <li><a href="#ecosistema">Gestión de Redes</a></li>
+                <li><a href="#ecosistema">Pauta & Meta Ads</a></li>
+                <li><a href="#ecosistema">Producción Visual</a></li>
+                <li><a href="#ecosistema">Branding</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <div class="footer-col-title">Compañía</div>
+            <ul class="footer-links">
+                <li><a href="#showroom">Portafolio</a></li>
+                <li><a href="#resultados">Por Qué Nosotros</a></li>
+                <li><a href="#pipeline">Proceso</a></li>
+                <li><a href="https://kaizenleap.github.io/KaizenLeapOn/" target="_blank">Planes & Precios</a></li>
+            </ul>
+        </div>
+        <div class="footer-col footer-col--cta">
+            <div class="footer-col-title">¿Listo para crecer?</div>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7;">Cuéntanos sobre tu negocio y preparamos una propuesta en menos de 24 horas.</p>
+            <a href="https://wa.me/573181066522?text=Hola%20Kaizen%20Leap%2C%20quiero%20una%20propuesta%20para%20mi%20marca." class="btn-gold" style="font-size:9px;padding:14px 28px;" target="_blank">✦ Escribir Ahora</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+            <span>© 2026 Kaizen Leap · Cundinamarca & Bogotá, Colombia</span>
+            <span style="opacity:.35;font-size:9px;letter-spacing:2px;">MARKETING DIGITAL · CONTENIDO · PAUTA · BRANDING</span>
+        </div>
     </div>
 </footer>
 
@@ -1949,6 +2773,25 @@
                 }
             });
         }
+
+        // ══ HAMBURGER MENU MÓVIL ══
+        const navToggle = document.getElementById('navToggle');
+        const mainNav   = document.getElementById('mainNav');
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = mainNav.classList.toggle('open');
+                navToggle.classList.toggle('open', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+            // Cerrar al hacer click en un link
+            mainNav.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mainNav.classList.remove('open');
+                    navToggle.classList.remove('open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
     });
 </script>
 
@@ -2027,5 +2870,82 @@
 })();
 </script>
 
+<script>
+/* ══ ACCORDION PORTAFOLIO ══ */
+function togglePortfolio() {
+    const btn = document.getElementById('portExpandBtn');
+    const wrapper = document.getElementById('portGridWrapper');
+    const isOpen = btn.classList.toggle('open');
+    wrapper.classList.toggle('open', isOpen);
+    btn.querySelector('.peb-text').textContent = isOpen ? 'Ocultar trabajos' : 'Ver todos nuestros trabajos';
+    if (isOpen) {
+        setTimeout(() => {
+            btn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (typeof AOS !== 'undefined') AOS.refresh();
+        }, 100);
+    }
+}
+</script>
+
+<script>
+/* ══ PARALLAX HERO H1 ══ */
+(function(){
+    const h1wrap = document.querySelector('.hero-h1-wrap');
+    const heroBokeh = document.querySelector('.hero-bokeh');
+    if (!h1wrap) return;
+    let ticking = false;
+    window.addEventListener('scroll', function(){
+        if (!ticking) {
+            requestAnimationFrame(function(){
+                const sy = window.scrollY;
+                const vh = window.innerHeight;
+                if (sy < vh * 1.2) {
+                    const ratio = sy / vh;
+                    h1wrap.style.transform = `translateY(${sy * 0.18}px)`;
+                    h1wrap.style.opacity   = Math.max(0, 1 - ratio * 1.6);
+                    if (heroBokeh) heroBokeh.style.transform = `translateY(${sy * 0.08}px)`;
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+})();
+
+/* ══ STAT COUNTERS ANIMADOS AL ENTRAR AL VIEWPORT ══ */
+(function(){
+    const stats = document.querySelectorAll('.stat-n');
+    if (!stats.length) return;
+    const easeOut = t => 1 - Math.pow(1 - t, 3);
+    function animateCounter(el) {
+        const raw = el.textContent.trim();
+        // Extraer número y sufijo
+        const match = raw.match(/^([0-9.]+)(.*)$/);
+        if (!match) return;
+        const target = parseFloat(match[1]);
+        const suffix = match[2] || '';
+        const duration = 1800;
+        const start = performance.now();
+        function step(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const val = target * easeOut(progress);
+            const display = Number.isInteger(target) ? Math.round(val) : val.toFixed(1);
+            el.textContent = display + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting && !e.target.dataset.animated) {
+                e.target.dataset.animated = '1';
+                animateCounter(e.target);
+            }
+        });
+    }, { threshold: 0.6 });
+    stats.forEach(el => observer.observe(el));
+})();
+</script>
 </body>
 </html>
