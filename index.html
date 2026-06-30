@@ -1373,6 +1373,13 @@
         }
         .lead-error i { font-size: 16px; flex-shrink: 0; }
 
+        /* Pulso para llamar la atención si el popup de WhatsApp fue bloqueado */
+        .wa-btn-pulse { animation: waPulse 1.4s ease-in-out infinite; }
+        @keyframes waPulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+            50%     { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+        }
+
         /* Pixel de Meta — eventos en botones */
         @media (max-width: 768px) {
             .lead-fields { grid-template-columns: 1fr; }
@@ -2311,12 +2318,14 @@
         <p>Enviando tu información...</p>
     </div>
 
-    <!-- Estado de enviado (aparece al volver con ?enviado=1) -->
+    <!-- Estado de enviado -->
     <div class="lead-success" id="leadSuccess" style="display:none;">
         <div class="ls-icon"><i class="bi bi-check-circle-fill"></i></div>
         <h3>¡Recibido!</h3>
-        <p>En menos de 2 horas un miembro del equipo de Kaizen Leap te contacta al número que dejaste.</p>
-        <a href="https://wa.me/573181066522?text=%C2%A1Hola%21%20Acabo%20de%20llenar%20el%20formulario%20de%20Kaizen%20Leap." class="btn-gold" target="_blank">También puedes escribirnos ahora</a>
+        <p>Te estamos abriendo WhatsApp con un mensaje ya listo de nuestro equipo. Si no se abrió automáticamente, usa el botón de abajo — un asesor real te está esperando. 💬</p>
+        <a href="#" id="leadWaContact" class="btn-gold" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i> Continuar la conversación en WhatsApp
+        </a>
     </div>
 
     <!-- Social proof -->
@@ -3146,6 +3155,29 @@ function togglePortfolio() {
                     content_category: 'Formulario Web'
                 });
             }
+
+            // ══ MENSAJE PERSONALIZADO CÁLIDO PARA EL CLIENTE ══
+            const primerNombre = nombre.split(' ')[0];
+            const numeroLimpio = telefono.replace(/[^0-9]/g, '');
+            const mensajeCliente =
+                `¡Hola ${primerNombre}! 👋 Soy del equipo de Kaizen Leap, qué alegría que quieras que trabajemos juntos.\n\n` +
+                `Vi que te interesa *${servicio}* — justo es una de las áreas en las que más nos encanta ayudar a marcas como la tuya a crecer de verdad. 🚀\n\n` +
+                `Cuéntame un poco más de tu negocio para preparar algo pensado específicamente para ti. Estoy aquí para resolver todas tus dudas, sin compromiso. ✨`;
+
+            const waLink = `https://wa.me/57${numeroLimpio}?text=${encodeURIComponent(mensajeCliente)}`;
+
+            // Guardamos el link en el botón visible del panel de éxito
+            const waBtn = document.getElementById('leadWaContact');
+            if (waBtn) waBtn.href = waLink;
+
+            // Intento de apertura automática (puede ser bloqueado por el navegador si no detecta interacción directa)
+            setTimeout(function() {
+                const popup = window.open(waLink, '_blank');
+                if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+                    // El navegador bloqueó el popup — el botón visible queda como respaldo
+                    if (waBtn) waBtn.classList.add('wa-btn-pulse');
+                }
+            }, 600);
         })
         .catch(function() {
             // Si falla, mostramos el form de nuevo con el error visible
