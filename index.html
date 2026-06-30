@@ -99,8 +99,16 @@
         
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,700;0,900;1,400;1,700&family=Outfit:wght=200;300;400;500;600;700;800&display=swap');
 
+        /* RESET GLOBAL — box-sizing border-box previene desbordes horizontales
+           en TODOS los dispositivos (causa raíz del scroll lateral en móvil) */
+        *, *::before, *::after { box-sizing: border-box; }
+
         /* CONFIGURACIÓN GLOBAL CINEMATOGRÁFICA */
-        html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; background-color: var(--ink); color: var(--cream); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+        html { overflow-x: hidden; width: 100%; max-width: 100%; }
+        body { overflow-x: hidden; width: 100%; max-width: 100%; margin: 0; padding: 0; background-color: var(--ink); color: var(--cream); font-family: var(--font-body); -webkit-font-smoothing: antialiased; position: relative; }
+
+        /* Cualquier imagen, video o iframe nunca debe exceder su contenedor */
+        img, video, iframe, svg { max-width: 100%; height: auto; }
 
         /* Grain cinematográfico global — capa muy sutil sobre toda la página */
         body::after {
