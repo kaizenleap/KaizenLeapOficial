@@ -2322,7 +2322,7 @@
     <div class="lead-success" id="leadSuccess" style="display:none;">
         <div class="ls-icon"><i class="bi bi-check-circle-fill"></i></div>
         <h3>¡Recibido!</h3>
-        <p>Te estamos abriendo WhatsApp con un mensaje ya listo de nuestro equipo. Si no se abrió automáticamente, usa el botón de abajo — un asesor real te está esperando. 💬</p>
+        <p>Te estamos abriendo WhatsApp con un mensaje ya listo para enviarnos. Si no se abrió automáticamente, presiona el botón de abajo — solo confirma el envío y un asesor real te responde enseguida. 💬</p>
         <a href="#" id="leadWaContact" class="btn-gold" target="_blank" rel="noopener">
             <i class="bi bi-whatsapp"></i> Continuar la conversación en WhatsApp
         </a>
@@ -3156,15 +3156,16 @@ function togglePortfolio() {
                 });
             }
 
-            // ══ MENSAJE PERSONALIZADO CÁLIDO PARA EL CLIENTE ══
+            // ══ MENSAJE PERSONALIZADO — EL CLIENTE LE ESCRIBE A KAIZEN LEAP ══
             const primerNombre = nombre.split(' ')[0];
-            const numeroLimpio = telefono.replace(/[^0-9]/g, '');
+            const numeroKaizenLeap = '573181066522'; // número oficial de Kaizen Leap
             const mensajeCliente =
-                `¡Hola ${primerNombre}! 👋 Soy del equipo de Kaizen Leap, qué alegría que quieras que trabajemos juntos.\n\n` +
-                `Vi que te interesa *${servicio}* — justo es una de las áreas en las que más nos encanta ayudar a marcas como la tuya a crecer de verdad. 🚀\n\n` +
-                `Cuéntame un poco más de tu negocio para preparar algo pensado específicamente para ti. Estoy aquí para resolver todas tus dudas, sin compromiso. ✨`;
+                'Hola, soy ' + nombre + '. Acabo de llenar el formulario en su pagina web y me interesa ' +
+                'el servicio de *' + servicio + '*.\n\n' +
+                'Me gustaria que me cuenten mas y conocer como podemos trabajar juntos para hacer crecer mi marca. ' +
+                'Quedo atento a su respuesta.';
 
-            const waLink = `https://wa.me/57${numeroLimpio}?text=${encodeURIComponent(mensajeCliente)}`;
+            const waLink = 'https://wa.me/' + numeroKaizenLeap + '?text=' + encodeURIComponent(mensajeCliente);
 
             // Guardamos el link en el botón visible del panel de éxito
             const waBtn = document.getElementById('leadWaContact');
