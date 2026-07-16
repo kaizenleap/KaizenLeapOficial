@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 
     <!-- ══ SEO PRIMARIO ══ -->
     <title>Kaizen Leap — Agencia de Marketing Digital en Cundinamarca & Bogotá | Contenido que Vende</title>
@@ -161,6 +161,7 @@
         ══════════════════════════════════════════════ */
         .hero {
             min-height: 100vh;
+            min-height: 100svh; /* iOS/Android: descuenta la barra de direcciones, evita el salto al cargar */
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
             text-align: center;
@@ -2547,6 +2548,7 @@
                 position: relative; z-index: 2;
                 width: min(92vw, 1100px);
                 max-height: 92vh;
+                max-height: 92svh;
                 display: flex; flex-direction: column;
                 background: #080400;
                 border: 1px solid rgba(212,168,67,0.18);
@@ -2684,6 +2686,19 @@
                 #kl-lb-panel { width: 98vw; }
                 #kl-lb-title { font-size: 14px; }
                 #kl-lb-stage.vertical { padding-top: 140%; }
+            }
+            /* Pantallas de poca altura: móvil en horizontal, tablets pequeñas.
+               En vez de forzar el aspect-ratio (que desborda el panel), el
+               stage cede al espacio flex disponible para que header/footer
+               nunca queden cortados. */
+            @media screen and (max-height: 620px) {
+                #kl-lb-panel { max-height: 96svh; }
+                #kl-lb-stage,
+                #kl-lb-stage.vertical {
+                    padding-top: 0;
+                    flex: 1 1 auto;
+                    min-height: 0;
+                }
             }
         `;
         document.head.appendChild(lbStyle);
