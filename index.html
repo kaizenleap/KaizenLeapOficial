@@ -469,6 +469,41 @@ html.js .rv{transition:opacity .7s cubic-bezier(.22,.61,.36,1),
   .rv{opacity:1;transform:none}
 }
 
+/* --- Pantallas grandes y televisores: el contenido tiene tope, la tipografia
+       sube para que se lea a distancia de sala. --- */
+@media (min-width:1600px){
+  .wrap,.hdr-in{max-width:1200px}
+}
+@media (min-width:2200px){
+  .wrap,.hdr-in{max-width:1400px}
+  .hero-h1{font-size:clamp(96px,5vw,140px)}
+  .hero-p{font-size:21px;max-width:720px}
+  .hero-eyebrow{font-size:14px}
+  .hstat-n{font-size:52px}
+  .hstat-l{font-size:12.5px}
+  .sec-h{font-size:clamp(58px,3.2vw,76px)}
+  .sec-sub{font-size:20px;max-width:70ch}
+  .svc-t{font-size:38px}
+  .svc-d{font-size:19px}
+  .svc-n{font-size:66px}
+  .svc-tag{font-size:12.5px}
+  .step-t{font-size:30px}
+  .step-d{font-size:18px}
+  .pkg-n{font-size:34px}
+  .pkg-p{font-size:50px}
+  .proof-i{font-size:15.5px}
+  .quote-txt{font-size:clamp(30px,2vw,38px)}
+  .quote-name{font-size:18px}
+  .pf-note{font-size:16px}
+  .pf-tag{font-size:12.5px}
+  .client-n{font-size:19px}
+  .client-m{font-size:13.5px}
+  .member-role{font-size:13px}
+  .ftr-grid{font-size:17px}
+  .ftr-p{font-size:16.5px}
+  .ftr-h{font-size:13px}
+  .eye{font-size:12.5px}
+}
 </style>
 </head>
 <body>
@@ -766,10 +801,10 @@ html.js .rv{transition:opacity .7s cubic-bezier(.22,.61,.36,1),
       <span class="quote-mark">&ldquo;</span>
       <p class="quote-txt">Con Kaizen Leap pasamos de casi no tener presencia en redes a tener contenido de calidad todos los días. Las fotos y videos de nuestras pizzas se ven increíbles y los clientes nos dicen que nos conocieron por Instagram o TikTok. El equipo responde rápido y siempre propone ideas nuevas.</p>
       <div class="quote-who">
-        <div class="quote-av">KR</div>
+        <div class="quote-av">SP</div>
         <div class="quote-meta">
-          <span class="quote-name">Kevin Rico</span>
-          <span class="quote-role">Súper Pizza · 7 sedes · Cundinamarca</span>
+          <span class="quote-name">Súper Pizza</span>
+          <span class="quote-role">Cliente · 7 sedes · Cundinamarca</span>
         </div>
       </div>
     </div>
