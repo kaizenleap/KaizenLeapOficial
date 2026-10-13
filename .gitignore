@@ -2,3 +2,6 @@
 _backup/
 # Material de origen que no se publica (131 MB, supera el límite de GitHub)
 Presentacion_corta_Audiovisual.mp4
+
+# Originales de Drive desde los que se generan los .webp (27 MB, no se publican)
+portafolio/_originales/
