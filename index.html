@@ -511,6 +511,109 @@ html.js .rv{transition:opacity .7s cubic-bezier(.22,.61,.36,1),
   .eye{font-size:12.5px}
 }
 </style>
+<script>
+/* ============================================================
+   ANALITICA — Kaizen Leap
+   ------------------------------------------------------------
+   Pega los IDs aqui cuando existan. MIENTRAS ESTEN VACIOS no se
+   carga nada ni se hace ninguna peticion a terceros.
+
+     KL_GA4  : Google Analytics 4  ->  Administrar > Flujos de datos > ID de medicion
+     KL_META : Pixel de Meta       ->  Administrador de eventos > ID del pixel
+
+   Los eventos ya estan cableados en el sitio:
+     click_whatsapp    · la conversion que de verdad importa
+     formulario_enviado
+     video_abierto
+     salida_a_planes
+   ============================================================ */
+var KL_GA4  = '';
+var KL_META = '';
+
+(function () {
+  'use strict';
+  var conGA = KL_GA4 && KL_GA4.indexOf('G-') === 0;
+  var conMeta = KL_META && /^[0-9]{8,}$/.test(KL_META);
+
+  /* --- Cargadores: solo si hay ID --- */
+  if (conGA) {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + KL_GA4;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', KL_GA4, { anonymize_ip: true });
+  }
+  if (conMeta) {
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', KL_META);
+    fbq('track', 'PageView');
+  }
+
+  /* --- Capa propia: funciona con o sin proveedores --- */
+  window.klTrack = function (evento, datos) {
+    datos = datos || {};
+    try {
+      if (window.gtag) gtag('event', evento, datos);
+      if (window.fbq) fbq('trackCustom', evento, datos);
+    } catch (e) { /* la medicion nunca debe romper la pagina */ }
+  };
+
+  function texto(el) { return (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60); }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var sitio = a.closest('header, nav') ? 'menu'
+              : a.closest('.hero') ? 'hero'
+              : a.closest('footer') ? 'pie'
+              : a.closest('form') ? 'formulario' : 'cuerpo';
+
+    if (href.indexOf('wa.me') !== -1) {
+      klTrack('click_whatsapp', { ubicacion: sitio, texto: texto(a) });
+    } else if (href.indexOf('KaizenLeapOn') !== -1) {
+      klTrack('salida_a_planes', { destino: 'propuesta' });
+    } else if (href.indexOf('instagram.com') !== -1 || href.indexOf('tiktok.com') !== -1) {
+      klTrack('salida_a_redes', { red: href.indexOf('instagram') !== -1 ? 'instagram' : 'tiktok' });
+    }
+  }, true);
+
+  /* Abrir un video del portafolio */
+  document.addEventListener('click', function (e) {
+    var c = e.target.closest ? e.target.closest('.pf-card') : null;
+    if (c) klTrack('video_abierto', { titulo: texto(c) });
+  }, true);
+
+  /* Formulario enviado */
+  var form = document.getElementById('leadForm');
+  if (form) {
+    form.addEventListener('submit', function () {
+      var serv = form.querySelector('input[name="Servicio"]:checked');
+      klTrack('formulario_enviado', { servicio: serv ? serv.value : '' });
+    });
+  }
+
+  /* Profundidad de lectura: a mitad y al final */
+  var m50 = false, m90 = false;
+  window.addEventListener('scroll', function () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h <= 0) return;
+    var p = window.scrollY / h;
+    if (!m50 && p > 0.5) { m50 = true; klTrack('scroll_50'); }
+    if (!m90 && p > 0.9) { m90 = true; klTrack('scroll_90'); }
+  }, { passive: true });
+})();
+</script>
 </head>
 <body>
 <a class="skip" href="#servicios">Saltar al contenido</a>
