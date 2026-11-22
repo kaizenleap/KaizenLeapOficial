@@ -1648,7 +1648,7 @@ var KL_META = '';
 </script>
 
 <script>
-/* ═══ Voz de bienvenida — las ondas reaccionan a audio real ═══ */
+/* ═══ Voz de bienvenida — suena sola al abrir; la onda la repite y reacciona ═══ */
 (function(){
   'use strict';
   var AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -1658,10 +1658,10 @@ var KL_META = '';
   if (!AudioCtx || !wave || !btn) return;
   var ctx = null, buffer = null, abDatos = null;
   var sonando = false, src = null, analyser = null, freq = null, rafVoz = 0;
+  var pendiente = false, gestos = null, tGesto = 0;
   window.__klVozActiva = false;
 
-  /* solo el archivo se descarga en idle (93 KB, caché del navegador);
-     el AudioContext se crea dentro del clic → arranque inmediato garantizado */
+  /* el archivo se descarga en idle (93 KB); el AudioContext nace al usarlo */
   fetch('media/bienvenida.mp3')
     .then(function(r){ if (!r.ok) throw new Error('http ' + r.status); return r.arrayBuffer(); })
     .then(function(ab){ abDatos = ab; })
@@ -1685,17 +1685,22 @@ var KL_META = '';
     if (sonando) rafVoz = requestAnimationFrame(motorVoz);
   }
 
-  function parar(){
-    sonando = false;
-    window.__klVozActiva = false;
-    if (rafVoz) cancelAnimationFrame(rafVoz);
-    if (src) { try { src.stop(); } catch(e){} src = null; }
+  function silenciarUI(){
     btn.classList.remove('sonando');
     cap.textContent = 'Escuchar bienvenida';
     btn.setAttribute('aria-pressed', 'false');
   }
 
+  function parar(){
+    sonando = false;
+    window.__klVozActiva = false;
+    if (rafVoz) cancelAnimationFrame(rafVoz);
+    if (src) { try { src.stop(); } catch(e){} src = null; }
+    silenciarUI();
+  }
+
   function arrancar(){
+    if (sonando) return;
     if (ctx.state === 'suspended') ctx.resume();
     src = ctx.createBufferSource(); src.buffer = buffer;
     analyser = ctx.createAnalyser();
@@ -1711,19 +1716,62 @@ var KL_META = '';
     cap.textContent = 'Pausar';
     btn.setAttribute('aria-pressed', 'true');
     motorVoz();
+    /* comprobar si el navegador dejó sonar (autoplay): si bloqueó, quedar
+       armado para el primer gesto del visitante sin cambiar la interfaz */
+    setTimeout(function(){
+      if (!sonando || ctx.state === 'running') {
+        if (sonando) { try { sessionStorage.setItem('klVozAuto', '1'); } catch(e){} }
+        return;
+      }
+      parar();
+      armarGestos();
+    }, 350);
+  }
+
+  /* si el navegador bloqueó el autoplay: el primer clic/tecla/toque del
+     visitante dispara la voz (y ese mismo clic no la apaga) */
+  function armarGestos(){
+    if (gestos) return;
+    pendiente = true;
+    window.__klVozPend = true;
+    gestos = function(){
+      document.removeEventListener('pointerdown', gestos, true);
+      document.removeEventListener('keydown', gestos, true);
+      document.removeEventListener('touchstart', gestos, true);
+      gestos = null; pendiente = false; window.__klVozPend = false;
+      tGesto = Date.now();
+      if (buffer && !sonando && ctx) arrancar();
+    };
+    document.addEventListener('pointerdown', gestos, true);
+    document.addEventListener('keydown', gestos, true);
+    document.addEventListener('touchstart', gestos, true);
   }
 
   function tocar(){
+    if (Date.now() - tGesto < 900) return; /* el gesto que arrancó la voz no la pausa */
     if (sonando) { parar(); return; }
-    if (!abDatos) { cap.textContent = 'Escuchar bienvenida'; return; }
+    if (!abDatos) return;
     if (!ctx) { try { ctx = new AudioCtx(); } catch(e) { btn.style.display = 'none'; return; } }
     if (buffer) { arrancar(); return; }
-    /* primera vez: decodificar (rápido, ~100 ms para 93 KB) y arrancar */
     cap.textContent = 'Cargando\u2026';
     ctx.decodeAudioData(abDatos.slice(0))
       .then(function(buf){ buffer = buf; arrancar(); })
-      .catch(function(){ cap.textContent = 'Escuchar bienvenida'; });
+      .catch(function(){ silenciarUI(); });
   }
+
+  /* autoplay al terminar de abrir: cuando la intro revela el hero (o antes si
+     no hay intro). Una vez por sesión; el botón queda para repetirla siempre */
+  function intentarAutoplay(){
+    try { if (sessionStorage.getItem('klVozAuto')) return; } catch(e){}
+    if (!abDatos) { setTimeout(intentarAutoplay, 500); return; }
+    try { ctx = new AudioCtx(); } catch(e) { btn.style.display = 'none'; return; }
+    if (buffer) { arrancar(); return; }
+    ctx.decodeAudioData(abDatos.slice(0))
+      .then(function(buf){ buffer = buf; arrancar(); })
+      .catch(function(){});
+  }
+  var retardo = document.documentElement.classList.contains('sin-splash') ? 1200 : 2800;
+  setTimeout(intentarAutoplay, retardo);
 
   btn.addEventListener('click', tocar);
   btn.addEventListener('keydown', function(e){
